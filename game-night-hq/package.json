@@ -1,0 +1,16 @@
+{
+  "name": "game-night-hq-pages",
+  "private": true,
+  "description": "Editor-only setup: gives VS Code the React + Fluent UI types the generative pages use. Power Apps supplies these libraries at runtime; nothing here is uploaded.",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@fluentui/react-components": "^9.74.9",
+    "@types/react": "^17.0.93",
+    "@types/react-dom": "^17.0.26",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^7.0.2"
+  }
+}
