@@ -81,7 +81,13 @@
         </Address>
       </Addresses>
     </Publisher>
-    <RootComponents />
+    <RootComponents>
+      <RootComponent type="1" schemaName="kli_boardgame" behavior="0" />
+      <RootComponent type="1" schemaName="kli_gamenight" behavior="0" />
+      <RootComponent type="1" schemaName="kli_gameresult" behavior="0" />
+      <RootComponent type="1" schemaName="kli_player" behavior="0" />
+      <RootComponent type="1" schemaName="kli_rsvp" behavior="0" />
+    </RootComponents>
     <MissingDependencies />
   </SolutionManifest>
 </ImportExportXml>
