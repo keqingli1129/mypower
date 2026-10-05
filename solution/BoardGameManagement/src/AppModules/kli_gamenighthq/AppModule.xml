@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>kli_gamenighthq</UniqueName>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <WebResourceId>0b535a6f-0fc1-f111-aaad-6045bd08c2a1</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="kli_boardgame" />
+    <AppModuleComponent type="1" schemaName="kli_gamenight" />
+    <AppModuleComponent type="1" schemaName="kli_gameresult" />
+    <AppModuleComponent type="1" schemaName="kli_player" />
+    <AppModuleComponent type="1" schemaName="kli_rsvp" />
+    <AppModuleComponent type="26" id="{54be8a30-6c37-4de3-b7b8-030a9952d6e3}" />
+    <AppModuleComponent type="26" id="{77dbf040-28ec-4c3b-9294-11597e0e83bb}" />
+    <AppModuleComponent type="26" id="{18958efe-e8c4-47d3-bf1e-12156f5ab8d5}" />
+    <AppModuleComponent type="26" id="{ca3e1b8a-9b11-4b48-9a3a-17a1cb8523f0}" />
+    <AppModuleComponent type="26" id="{197294fd-be03-4ce6-9a60-1821d5ed641e}" />
+    <AppModuleComponent type="26" id="{54ddecd1-6a33-42e5-8a92-2577bbaa4b27}" />
+    <AppModuleComponent type="26" id="{7c222479-ef66-435d-a874-600babb50790}" />
+    <AppModuleComponent type="26" id="{1aea13c5-3993-4ced-a07f-6c0d646b9c86}" />
+    <AppModuleComponent type="26" id="{3fc962cb-0e78-4118-9bb6-83e7d37ef784}" />
+    <AppModuleComponent type="26" id="{2d206be1-baa2-4adf-a9cd-8a1a5c9b73c0}" />
+    <AppModuleComponent type="26" id="{dca37aac-e07e-4881-acfe-8dc8a2725c67}" />
+    <AppModuleComponent type="26" id="{59f73139-ae27-45b1-9f21-93d24f13aff7}" />
+    <AppModuleComponent type="26" id="{2ec3c006-592e-4768-b921-9e186a645159}" />
+    <AppModuleComponent type="26" id="{6ec5330e-9543-4eba-bb45-ab9283740f3d}" />
+    <AppModuleComponent type="26" id="{ac6097aa-b4af-46ca-9a08-dc4db17dfffa}" />
+    <AppModuleComponent type="26" id="{3dfb492a-2c58-41fe-8675-e25dc975409b}" />
+    <AppModuleComponent type="59" id="{095b1812-04ea-4d01-a27a-3c51797b47ee}" />
+    <AppModuleComponent type="59" id="{b1cc72b9-dc9b-4caf-b5a4-54e2e4c8a046}" />
+    <AppModuleComponent type="59" id="{4616a042-ecbb-4b7a-a050-7669c7f156cd}" />
+    <AppModuleComponent type="60" id="{1fd52cd0-e6f3-404c-8d09-370b2ec26cb5}" />
+    <AppModuleComponent type="60" id="{1fd8c7e9-3ba4-4844-915b-4e728adefcc1}" />
+    <AppModuleComponent type="60" id="{88e1cecd-0e48-4d54-989d-603f398acdae}" />
+    <AppModuleComponent type="60" id="{70693c0b-be4a-433d-9a0e-65ce94340e52}" />
+    <AppModuleComponent type="60" id="{171d9064-509b-4b0f-acd0-6d5121436282}" />
+    <AppModuleComponent type="60" id="{1e248b5e-733e-4e09-ae19-726cfb095810}" />
+    <AppModuleComponent type="60" id="{88d54033-866f-49fe-bd74-9cd5b9e40937}" />
+    <AppModuleComponent type="60" id="{597f6743-1fed-460d-b87f-c5b5763a4cde}" />
+    <AppModuleComponent type="60" id="{7afcb6af-c898-454a-9ca1-d1378ead73fe}" />
+    <AppModuleComponent type="60" id="{26e6f129-8e39-4b54-aa86-ffd5f7caadbe}" />
+    <AppModuleComponent type="62" schemaName="kli_gamenighthq" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{e5c393a9-10c1-f111-aaad-6045bd08c2a1}" />
+    <Role id="{11078faf-10c1-f111-aaad-6045bd08c2a1}" />
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="Game Night HQ" languagecode="1033" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description description="Run our board game nights: players, the game library, scheduled nights, RSVPs and results." languagecode="1033" />
+  </Descriptions>
+  <appsettings>
+    <appsetting settingdefinitionid.uniquename="AppChannel">
+      <iscustomizable>1</iscustomizable>
+      <value>1</value>
+    </appsetting>
+    <appsetting settingdefinitionid.uniquename="HeaderAndNavigationRefresh">
+      <iscustomizable>1</iscustomizable>
+      <value>2</value>
+    </appsetting>
+    <appsetting settingdefinitionid.uniquename="NewLookAlwaysOn">
+      <iscustomizable>1</iscustomizable>
+      <value>true</value>
+    </appsetting>
+  </appsettings>
+</AppModule>

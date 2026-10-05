@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Role id="{11078faf-10c1-f111-aaad-6045bd08c2a1}" name="Game Night Player" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsCustomizable>1</IsCustomizable>
+  <IsAutoAssigned>0</IsAutoAssigned>
+  <Description>Authored by @maker-studio/cds-maker-sdk (persona/security role).</Description>
+  <RolePrivileges>
+    <RolePrivilege name="prvAppendkli_rsvp" level="Basic" />
+    <RolePrivilege name="prvAppendTokli_gamenight" level="Global" />
+    <RolePrivilege name="prvAppendTokli_player" level="Global" />
+    <RolePrivilege name="prvCreatekli_rsvp" level="Basic" />
+    <RolePrivilege name="prvCreateSharePointData" level="Global" />
+    <RolePrivilege name="prvReadAppModule" level="Global" />
+    <RolePrivilege name="prvReadkli_boardgame" level="Global" />
+    <RolePrivilege name="prvReadkli_gamenight" level="Global" />
+    <RolePrivilege name="prvReadkli_gameresult" level="Global" />
+    <RolePrivilege name="prvReadkli_player" level="Global" />
+    <RolePrivilege name="prvReadkli_rsvp" level="Global" />
+    <RolePrivilege name="prvReadSharePointData" level="Global" />
+    <RolePrivilege name="prvReadSharePointDocument" level="Global" />
+    <RolePrivilege name="prvWritekli_rsvp" level="Basic" />
+    <RolePrivilege name="prvWriteSharePointData" level="Global" />
+  </RolePrivileges>
+</Role>

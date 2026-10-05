@@ -87,7 +87,45 @@
       <RootComponent type="1" schemaName="kli_gameresult" behavior="0" />
       <RootComponent type="1" schemaName="kli_player" behavior="0" />
       <RootComponent type="1" schemaName="kli_rsvp" behavior="0" />
+      <RootComponent type="20" id="{11078faf-10c1-f111-aaad-6045bd08c2a1}" behavior="0" />
+      <RootComponent type="20" id="{e5c393a9-10c1-f111-aaad-6045bd08c2a1}" behavior="0" />
+      <RootComponent type="61" schemaName="kli_boardgame_icon" behavior="0" />
+      <RootComponent type="61" schemaName="kli_gamenight_icon" behavior="0" />
+      <RootComponent type="61" schemaName="kli_gamenighthq_icon" behavior="0" />
+      <RootComponent type="61" schemaName="kli_gamenighthq_pagemanifest" behavior="0" />
+      <RootComponent type="61" schemaName="kli_gameresult_icon" behavior="0" />
+      <RootComponent type="61" schemaName="kli_player_icon" behavior="0" />
+      <RootComponent type="61" schemaName="kli_rsvp_icon" behavior="0" />
+      <RootComponent type="62" schemaName="kli_gamenighthq" behavior="0" />
+      <RootComponent type="80" schemaName="kli_gamenighthq" behavior="0" />
     </RootComponents>
-    <MissingDependencies />
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.20)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.25">PowerAppsAppFramework_Anchor (1.0.0.25)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=kli_gamenighthq,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="kli_gamenighthq" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="HeaderAndNavigationRefresh" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.20)" id.uniquename="HeaderAndNavigationRefresh">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.25">PowerAppsAppFramework_Anchor (1.0.0.25)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=kli_gamenighthq,settingdefinitionid.uniquename=HeaderAndNavigationRefresh" id.parentappmoduleid.uniquename="kli_gamenighthq" id.settingdefinitionid.uniquename="HeaderAndNavigationRefresh" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="NewLookAlwaysOn" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.20)" id.uniquename="NewLookAlwaysOn">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.25">PowerAppsAppFramework_Anchor (1.0.0.25)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=kli_gamenighthq,settingdefinitionid.uniquename=NewLookAlwaysOn" id.parentappmoduleid.uniquename="kli_gamenighthq" id.settingdefinitionid.uniquename="NewLookAlwaysOn" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="uxagentproject" solution="Active" id="{2a10c3e0-d318-4b92-893b-28a16b8bcce7}" />
+        <Dependent type="62" schemaName="kli_gamenighthq" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="uxagentproject" solution="Active" id="{794ecdc2-7845-414e-9d00-32a33a192156}" />
+        <Dependent type="62" schemaName="kli_gamenighthq" />
+      </MissingDependency>
+    </MissingDependencies>
   </SolutionManifest>
 </ImportExportXml>

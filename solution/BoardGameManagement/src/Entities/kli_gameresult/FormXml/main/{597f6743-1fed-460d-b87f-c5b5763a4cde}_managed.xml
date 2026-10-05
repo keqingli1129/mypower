@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{597f6743-1fed-460d-b87f-c5b5763a4cde}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="e20ecb85-0e1a-44bd-aaf0-3e724377521c" name="tab_general" expanded="true" visible="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="989750f3-7d57-4470-a3b3-7ea9e97fd403" name="section_general" showlabel="false" visible="true" columns="1">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="ae2f1931-8f61-41c5-baf2-f85b637c831d" showlabel="true" visible="true" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="96446d26-9ef3-419c-91ba-54a6126c0c72" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="kli_name" disabled="false" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="d4cbf51c-8d6a-47fc-8349-811be42285a5" showlabel="true" visible="true" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Fun Rating" languagecode="1033" />
+                        </labels>
+                        <control id="edbcae37-2326-44e0-b1b8-b1ae269dcc22" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="kli_funrating" disabled="false" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="ba424c99-6c41-4668-ab42-16ca32d5a7bf" showlabel="true" visible="true" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Note" languagecode="1033" />
+                        </labels>
+                        <control id="5d26315c-232e-4d03-88ee-18486c4b254d" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="kli_note" disabled="false" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="e2e136c6-ee17-4948-8c43-0c2c9918361e" showlabel="true" visible="true" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Game Night" languagecode="1033" />
+                        </labels>
+                        <control id="935e8c59-faaf-4b39-af68-efd9144db6ba" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="kli_gamenightid" disabled="false" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="66e2c78c-b9ac-4f58-bac6-f7e637295a41" showlabel="true" visible="true" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Board Game" languagecode="1033" />
+                        </labels>
+                        <control id="7c111af9-d3a2-4266-bc1c-a60f59661be9" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="kli_boardgameid" disabled="false" isrequired="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="7af301de-49e1-4750-932b-9baa0a2985e3" showlabel="true" visible="true" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Winner" languagecode="1033" />
+                        </labels>
+                        <control id="076c9c57-b689-4b81-9797-8f100c71cdaf" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="kli_winnerid" disabled="false" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{08d02a09-50cc-4541-8ad7-dfa4e32b8f6f}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{503a8180-5579-4f56-8630-d528e3debd56}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{59fdc73d-5f74-4048-bee1-bedc5b3d2aa0}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{73c26d57-b9c5-4008-91b4-9ec243afd564}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{88ab20b7-990a-4e37-b7c2-4433cd3e51eb}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{b8056f74-4d43-4a91-b1c4-2ee887472e38}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{6a8461ff-26ae-450b-9d4b-c98746ea48b4}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{2ad65561-e6e0-45be-8e11-934c5147032e}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Game Result" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Record a game: night, game, winner, fun rating and a note." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{ca3e1b8a-9b11-4b48-9a3a-17a1cb8523f0}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="kli_name" select="1" icon="1" preview="1">
+        <row name="result" id="kli_rsvpid">
+          <cell name="kli_name" width="100" />
+          <cell name="kli_gamenightid" width="100" />
+          <cell name="kli_playerid" width="100" />
+          <cell name="kli_response" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="kli_rsvp">
+          <attribute name="kli_name" />
+          <attribute name="kli_gamenightid" />
+          <attribute name="kli_playerid" />
+          <attribute name="kli_response" />
+          <order attribute="kli_gamenightid" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="RSVPs by Night" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Every response grouped by night — the organizer's headcount list." languagecode="1033" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

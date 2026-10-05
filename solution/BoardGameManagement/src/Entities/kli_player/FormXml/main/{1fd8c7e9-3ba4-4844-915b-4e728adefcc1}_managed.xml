@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{1fd8c7e9-3ba4-4844-915b-4e728adefcc1}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="ec4bd5b0-baae-4e9d-a9fb-742e09c15b60" name="tab_general" expanded="true" visible="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="67aef3d6-d31c-4835-a6eb-598dd6b50522" name="section_general" showlabel="false" visible="true" columns="1">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="d5d32479-506f-483f-91a8-48de3ac06aeb" showlabel="true" visible="true" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="82ce93fc-8b35-4ec8-bbfd-bc6c91bc6a35" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="kli_name" disabled="false" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="9ed78e6d-71e8-4f34-a063-682f6fcce835" showlabel="true" visible="true" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Email" languagecode="1033" />
+                        </labels>
+                        <control id="93a5e6c8-9f5e-4a6a-9f23-87bcfabcfad7" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="kli_email" disabled="false" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section id="9a38219b-a957-4db4-8d1f-a7747f385b73" name="section_grid_kli_player_kli_rsvp" showlabel="true" visible="true" columns="1">
+                  <labels>
+                    <label description="RSVPs" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="54f66756-7923-4b26-94e8-f372825d2c7c" showlabel="true" visible="true" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="RSVPs" languagecode="1033" />
+                        </labels>
+                        <control id="ea988c4c-203e-4d1d-adfe-576c21958f2c" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" disabled="false" isrequired="false">
+                          <parameters>
+                            <TargetEntityType>kli_rsvp</TargetEntityType>
+                            <ViewId>ca3e1b8a-9b11-4b48-9a3a-17a1cb8523f0</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>kli_player_kli_rsvp</RelationshipName>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <RecordsPerPage>10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section id="3bfd478f-d73b-4e80-bb24-1fc27559cd23" name="section_grid_kli_player_kli_gameresult" showlabel="true" visible="true" columns="1">
+                  <labels>
+                    <label description="Wins" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="f45a2e97-716e-4c3d-8891-a237ba5a0e34" showlabel="true" visible="true" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Wins" languagecode="1033" />
+                        </labels>
+                        <control id="ab2740b2-b7d1-4cb3-8858-4a37927ffe6d" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" disabled="false" isrequired="false">
+                          <parameters>
+                            <TargetEntityType>kli_gameresult</TargetEntityType>
+                            <ViewId>7c222479-ef66-435d-a874-600babb50790</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>kli_player_kli_gameresult</RelationshipName>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <RecordsPerPage>10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{0b5f4722-87d8-45d3-a323-aac09bc98728}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{4e1052a6-07fc-490a-adaf-191b744e621f}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{14683ab4-6e7f-4f85-8499-03efdcd2e21c}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a4787957-9c68-4298-bcd5-2d589f3e7036}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{8493c2f5-599f-4ecd-a4c1-fc8efe784e4d}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{2604b867-6a45-4d4e-9d3c-61d2f8e75e00}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{ab580215-0781-425d-a092-c36d93c39cd3}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{dd07f64b-58e4-4281-8d66-f85449833099}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Player" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A player's details with their RSVPs and wins." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

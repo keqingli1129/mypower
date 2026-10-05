@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "pages": [
+    {
+      "key": "home",
+      "name": "Game Night Home",
+      "pageId": "2a10c3e0-d318-4b92-893b-28a16b8bcce7",
+      "purpose": "Landing page: the next scheduled game night as a hero card (title, date/time, location, countdown, Going/Maybe counts from RSVPs), the next few upcoming nights, and the most recent game results (game, winner, fun rating).",
+      "dataSources": [
+        "kli_gamenight",
+        "kli_rsvp",
+        "kli_gameresult",
+        "kli_boardgame",
+        "kli_player"
+      ],
+      "source": {
+        "kind": "tsx",
+        "codeFile": "home.tsx"
+      }
+    },
+    {
+      "key": "leaderboard",
+      "name": "Leaderboard",
+      "pageId": "794ecdc2-7845-414e-9d00-32a33a192156",
+      "purpose": "Analytics: players ranked by number of wins (with win count bars), most-played board games, and average fun rating per game, computed from Game Results.",
+      "dataSources": [
+        "kli_gameresult",
+        "kli_player",
+        "kli_boardgame"
+      ],
+      "source": {
+        "kind": "tsx",
+        "codeFile": "leaderboard.tsx"
+      }
+    }
+  ],
+  "design": {
+    "accentColor": "#6b3fa0",
+    "density": "comfortable",
+    "cornerRadius": "medium",
+    "darkMode": "system",
+    "layout": "cards"
+  }
+}

@@ -11,7 +11,10 @@
       <grid name="resultset" jump="kli_name" select="1" icon="1" preview="1">
         <row name="result" id="kli_boardgameid">
           <cell name="kli_name" width="300" />
-          <cell name="createdon" width="125" />
+          <cell name="kli_minplayers" width="150" />
+          <cell name="kli_maxplayers" width="150" />
+          <cell name="kli_avgduration" width="150" />
+          <cell name="kli_complexity" width="150" />
         </row>
       </grid>
     </layoutxml>
@@ -21,7 +24,10 @@
         <entity name="kli_boardgame">
           <attribute name="kli_boardgameid" />
           <attribute name="kli_name" />
-          <attribute name="createdon" />
+          <attribute name="kli_minplayers" />
+          <attribute name="kli_maxplayers" />
+          <attribute name="kli_avgduration" />
+          <attribute name="kli_complexity" />
           <order attribute="kli_name" descending="false" />
           <filter type="and">
             <condition attribute="statecode" operator="eq" value="0" />

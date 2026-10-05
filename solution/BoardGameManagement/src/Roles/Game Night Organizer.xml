@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Role id="{e5c393a9-10c1-f111-aaad-6045bd08c2a1}" name="Game Night Organizer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsCustomizable>1</IsCustomizable>
+  <IsAutoAssigned>0</IsAutoAssigned>
+  <Description>Authored by @maker-studio/cds-maker-sdk (persona/security role).</Description>
+  <RolePrivileges>
+    <RolePrivilege name="prvAppendkli_boardgame" level="Global" />
+    <RolePrivilege name="prvAppendkli_gamenight" level="Global" />
+    <RolePrivilege name="prvAppendkli_gameresult" level="Global" />
+    <RolePrivilege name="prvAppendkli_player" level="Global" />
+    <RolePrivilege name="prvAppendkli_rsvp" level="Global" />
+    <RolePrivilege name="prvAppendTokli_boardgame" level="Global" />
+    <RolePrivilege name="prvAppendTokli_gamenight" level="Global" />
+    <RolePrivilege name="prvAppendTokli_gameresult" level="Global" />
+    <RolePrivilege name="prvAppendTokli_player" level="Global" />
+    <RolePrivilege name="prvAppendTokli_rsvp" level="Global" />
+    <RolePrivilege name="prvCreatekli_boardgame" level="Global" />
+    <RolePrivilege name="prvCreatekli_gamenight" level="Global" />
+    <RolePrivilege name="prvCreatekli_gameresult" level="Global" />
+    <RolePrivilege name="prvCreatekli_player" level="Global" />
+    <RolePrivilege name="prvCreatekli_rsvp" level="Global" />
+    <RolePrivilege name="prvCreateSharePointData" level="Global" />
+    <RolePrivilege name="prvDeletekli_boardgame" level="Global" />
+    <RolePrivilege name="prvDeletekli_gamenight" level="Global" />
+    <RolePrivilege name="prvDeletekli_gameresult" level="Global" />
+    <RolePrivilege name="prvDeletekli_player" level="Global" />
+    <RolePrivilege name="prvDeletekli_rsvp" level="Global" />
+    <RolePrivilege name="prvReadAppModule" level="Global" />
+    <RolePrivilege name="prvReadkli_boardgame" level="Global" />
+    <RolePrivilege name="prvReadkli_gamenight" level="Global" />
+    <RolePrivilege name="prvReadkli_gameresult" level="Global" />
+    <RolePrivilege name="prvReadkli_player" level="Global" />
+    <RolePrivilege name="prvReadkli_rsvp" level="Global" />
+    <RolePrivilege name="prvReadSharePointData" level="Global" />
+    <RolePrivilege name="prvReadSharePointDocument" level="Global" />
+    <RolePrivilege name="prvWritekli_boardgame" level="Global" />
+    <RolePrivilege name="prvWritekli_gamenight" level="Global" />
+    <RolePrivilege name="prvWritekli_gameresult" level="Global" />
+    <RolePrivilege name="prvWritekli_player" level="Global" />
+    <RolePrivilege name="prvWritekli_rsvp" level="Global" />
+    <RolePrivilege name="prvWriteSharePointData" level="Global" />
+  </RolePrivileges>
+</Role>

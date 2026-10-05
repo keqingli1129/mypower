@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{1e248b5e-733e-4e09-ae19-726cfb095810}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="a1b07e04-5d9e-4f9a-92b6-d70f31514300" name="tab_general" expanded="true" visible="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="31032b3b-d624-49aa-936e-01f41cd4801d" name="section_general" showlabel="false" visible="true" columns="1">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="ae8914a7-56f1-4c30-b24a-06928376a92c" showlabel="true" visible="true" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Title" languagecode="1033" />
+                        </labels>
+                        <control id="39ab8f6d-9fc3-4b8b-89b7-f41e52cc72d1" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="kli_name" disabled="false" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="ed10fd88-c9a6-4f6c-a0ef-8edab90d0e54" showlabel="true" visible="true" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Starts On" languagecode="1033" />
+                        </labels>
+                        <control id="b8436b3a-0c78-4aa5-838c-d1a397e7c027" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="kli_startson" disabled="false" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="1fede788-4942-4d1d-b792-5babe465a314" showlabel="true" visible="true" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Location" languagecode="1033" />
+                        </labels>
+                        <control id="08e4557a-31e2-4954-a7ce-be3e3197bcd4" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="kli_location" disabled="false" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section id="5eebf429-57ba-4363-9244-6bf08e5b339c" name="section_grid_kli_gamenight_kli_rsvp" showlabel="true" visible="true" columns="1">
+                  <labels>
+                    <label description="Who's Coming" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="ef2eb63f-78bb-4c15-93f4-b15665814812" showlabel="true" visible="true" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Who's Coming" languagecode="1033" />
+                        </labels>
+                        <control id="3dcce10a-9c8c-46e1-a38b-4a3db3f596a4" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" disabled="false" isrequired="false">
+                          <parameters>
+                            <TargetEntityType>kli_rsvp</TargetEntityType>
+                            <ViewId>ca3e1b8a-9b11-4b48-9a3a-17a1cb8523f0</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>kli_gamenight_kli_rsvp</RelationshipName>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <RecordsPerPage>10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section id="9ecaed77-9918-4050-8d55-27d5bb89a103" name="section_grid_kli_gamenight_kli_gameresult" showlabel="true" visible="true" columns="1">
+                  <labels>
+                    <label description="Games Played" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="ee8f44e1-d729-4b1a-b8d5-e66553ecfc72" showlabel="true" visible="true" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Games Played" languagecode="1033" />
+                        </labels>
+                        <control id="d4cf7c10-d6bf-43e6-bb59-15776360cae6" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" disabled="false" isrequired="false">
+                          <parameters>
+                            <TargetEntityType>kli_gameresult</TargetEntityType>
+                            <ViewId>7c222479-ef66-435d-a874-600babb50790</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>kli_gamenight_kli_gameresult</RelationshipName>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <RecordsPerPage>10</RecordsPerPage>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{9ba41c4f-12d4-471d-9048-0598f22238ff}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{7db3d8af-d391-49c9-8522-de167b615d2d}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{fb070ffd-196e-4182-94ee-53c194daa44a}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{6c68c25f-f68c-4947-929a-c60e5b077106}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{152b3824-63e4-4b9d-b1ac-ae6381da6c8b}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{42527e4c-f99b-4b07-9d7e-2bce857bb447}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{425ce726-41f0-4bf1-b54e-f650cfe21718}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{db0f2276-91d2-4bcf-8699-2178a52e6db2}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Game Night" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="One night: when and where, who is coming, and what was played." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

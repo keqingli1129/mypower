@@ -44,3 +44,10 @@ Build PAUSED pending System Customizer grant. Resume: re-run the data pre-build 
 User created personal Developer environment "Keqing Li Dev" (https://orgf8ec768a.crm.dynamics.com/, System Administrator).
 `pac org select --environment https://orgf8ec768a.crm.dynamics.com/`
 Recreated publisher KeqingLi (kli / 31847) + solution BoardGameManagement there. solution/ re-cloned. .maker-workspace cleared (it cached the old environment).
+`node build-model-app.js --env https://orgf8ec768a.crm.dynamics.com --spec @app-spec.json` (dry run, dev env) → 35 to create, 0 present; resumed per user "switch" (resume build)
+`node build-model-app.js --env https://orgf8ec768a.crm.dynamics.com --spec @app-spec.json --stage data --apply` → 24 created, 9 skipped, 0 failed
+`pac model genpage generate-types --data-sources "kli_gamenight,kli_rsvp,kli_gameresult,kli_boardgame,kli_player" --output-file RuntimeTypes.ts` → ok
+`node write-page-plan.js ... --languages "1033"` → app-builder-page-plan.md (home, leaderboard)
+Dispatched genpage-page-builder ×2 → home.tsx (1219 lines), leaderboard.tsx (1028 lines)
+`node promote-intent-pages.js` → ok, 2 pages promoted
+Note: inline choice options were created with values 100000000+ (not the publisher's 31847 prefix); pages use the deployed values.

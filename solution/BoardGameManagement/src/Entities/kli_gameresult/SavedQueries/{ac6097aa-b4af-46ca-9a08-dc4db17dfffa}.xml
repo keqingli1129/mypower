@@ -11,7 +11,10 @@
       <grid name="resultset" jump="kli_name" select="1" icon="1" preview="1">
         <row name="result" id="kli_gameresultid">
           <cell name="kli_name" width="300" />
-          <cell name="createdon" width="125" />
+          <cell name="kli_funrating" width="150" />
+          <cell name="kli_gamenightid" width="150" />
+          <cell name="kli_boardgameid" width="150" />
+          <cell name="kli_winnerid" width="150" />
         </row>
       </grid>
     </layoutxml>
@@ -21,7 +24,10 @@
         <entity name="kli_gameresult">
           <attribute name="kli_gameresultid" />
           <attribute name="kli_name" />
-          <attribute name="createdon" />
+          <attribute name="kli_funrating" />
+          <attribute name="kli_gamenightid" />
+          <attribute name="kli_boardgameid" />
+          <attribute name="kli_winnerid" />
           <order attribute="kli_name" descending="false" />
           <filter type="and">
             <condition attribute="statecode" operator="eq" value="1" />

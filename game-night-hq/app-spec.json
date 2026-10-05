@@ -833,7 +833,8 @@
         "kli_player"
       ],
       "source": {
-        "kind": "intent"
+        "kind": "tsx",
+        "codeFile": "home.tsx"
       }
     },
     {
@@ -846,7 +847,8 @@
         "kli_boardgame"
       ],
       "source": {
-        "kind": "intent"
+        "kind": "tsx",
+        "codeFile": "leaderboard.tsx"
       }
     }
   ],

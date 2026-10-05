@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModuleSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SiteMapUniqueName>kli_gamenighthq</SiteMapUniqueName>
+  <EnableCollapsibleGroups>False</EnableCollapsibleGroups>
+  <ShowHome>True</ShowHome>
+  <ShowPinned>True</ShowPinned>
+  <ShowRecents>True</ShowRecents>
+  <SiteMap IntroducedVersion="7.0.0.0">
+    <Area Id="area_0" ShowGroups="true" ResourceId="SitemapDesigner.NewTitle" DescriptionResourceId="SitemapDesigner.NewTitle" IntroducedVersion="7.0.0.0">
+      <Titles>
+        <Title LCID="1033" Title="Game Night HQ" />
+      </Titles>
+      <Group Id="group_0_0" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" ToolTipResourseId="SitemapDesigner.Unknown" IntroducedVersion="7.0.0.0" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Overview" />
+        </Titles>
+        <SubArea Id="sub_0_0_0" GenPageId="2a10c3e0-d318-4b92-893b-28a16b8bcce7" ResourceId="SitemapDesigner.NewSubArea" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA" AvailableOffline="true" PassParams="false" VectorIcon="/_imgs/TableIconsFluentV9/document_one_page_sparkle.svg">
+          <Titles>
+            <Title LCID="1033" Title="Home" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_0_0_1" GenPageId="794ecdc2-7845-414e-9d00-32a33a192156" ResourceId="SitemapDesigner.NewSubArea" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA" AvailableOffline="true" PassParams="false" VectorIcon="/_imgs/TableIconsFluentV9/document_one_page_sparkle.svg">
+          <Titles>
+            <Title LCID="1033" Title="Leaderboard" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="group_0_1" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" ToolTipResourseId="SitemapDesigner.Unknown" IntroducedVersion="7.0.0.0" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Game Nights" />
+        </Titles>
+        <SubArea Id="sub_0_1_0" Entity="kli_gamenight" ResourceId="SitemapDesigner.NewSubArea" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA" AvailableOffline="true" PassParams="false">
+          <Titles>
+            <Title LCID="1033" Title="Game Nights" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_0_1_1" Entity="kli_rsvp" ResourceId="SitemapDesigner.NewSubArea" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA" AvailableOffline="true" PassParams="false">
+          <Titles>
+            <Title LCID="1033" Title="RSVPs" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_0_1_2" Entity="kli_gameresult" ResourceId="SitemapDesigner.NewSubArea" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA" AvailableOffline="true" PassParams="false">
+          <Titles>
+            <Title LCID="1033" Title="Game Results" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="group_0_2" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" ToolTipResourseId="SitemapDesigner.Unknown" IntroducedVersion="7.0.0.0" IsProfile="false">
+        <Titles>
+          <Title LCID="1033" Title="Library &amp; People" />
+        </Titles>
+        <SubArea Id="sub_0_2_0" Entity="kli_boardgame" ResourceId="SitemapDesigner.NewSubArea" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA" AvailableOffline="true" PassParams="false">
+          <Titles>
+            <Title LCID="1033" Title="Board Games" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="sub_0_2_1" Entity="kli_player" ResourceId="SitemapDesigner.NewSubArea" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" Sku="All,OnPremise,Live,SPLA" AvailableOffline="true" PassParams="false">
+          <Titles>
+            <Title LCID="1033" Title="Players" />
+          </Titles>
+        </SubArea>
+      </Group>
+    </Area>
+  </SiteMap>
+  <LocalizedNames>
+    <LocalizedName description="Game Night HQ" languagecode="1033" />
+  </LocalizedNames>
+</AppModuleSiteMap>

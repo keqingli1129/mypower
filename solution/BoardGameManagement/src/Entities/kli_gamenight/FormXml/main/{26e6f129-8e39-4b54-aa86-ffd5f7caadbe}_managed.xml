@@ -4,7 +4,7 @@
     <formid>{26e6f129-8e39-4b54-aa86-ffd5f7caadbe}</formid>
     <IntroducedVersion>1.0.0.0</IntroducedVersion>
     <FormPresentation>1</FormPresentation>
-    <FormActivationState>1</FormActivationState>
+    <FormActivationState>0</FormActivationState>
     <form>
       <tabs>
         <tab verticallayout="true" id="{eb18c1f5-16c0-4306-9724-ca88df14a9b7}" IsUserDefined="1">

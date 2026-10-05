@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<visualization xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedqueryvisualizationid>{095B1812-04EA-4D01-A27A-3C51797B47EE}</savedqueryvisualizationid>
+  <datadescription>
+    <datadefinition>
+      <fetchcollection>
+        <fetch mapping="logical" aggregate="true">
+          <entity name="kli_boardgame">
+            <attribute alias="agg_0" name="kli_boardgameid" aggregate="count" />
+            <attribute alias="grp_0" name="kli_complexity" groupby="true" />
+          </entity>
+        </fetch>
+      </fetchcollection>
+      <categorycollection>
+        <category alias="grp_0">
+          <measurecollection>
+            <measure alias="agg_0" />
+          </measurecollection>
+        </category>
+      </categorycollection>
+    </datadefinition>
+  </datadescription>
+  <presentationdescription>
+    <Chart Palette="BrightPastel">
+      <Series>
+        <Series ChartType="Pie" ChartArea="Default" />
+      </Series>
+      <ChartAreas>
+        <ChartArea Name="Default" />
+      </ChartAreas>
+      <Legends>
+        <Legend Name="Default" />
+      </Legends>
+    </Chart>
+  </presentationdescription>
+  <isdefault>0</isdefault>
+  <LocalizedNames>
+    <LocalizedName description="Library by Complexity" languagecode="1033" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description description="Balance of light vs heavy games in the collection." languagecode="1033" />
+  </Descriptions>
+  <IsCustomizable>1</IsCustomizable>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CanBeDeleted>1</CanBeDeleted>
+</visualization>
