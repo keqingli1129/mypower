@@ -1,0 +1,912 @@
+Introduction
+Hey everyone, how's it going? My name is
+Hen Rasheed, Microsoft MVP and MCT and
+founder of Power Academy. And in today's
+video, we are going to be going over the
+modern way to develop Power Platform
+solutions because I really do think that
+the old way of doing things before 2026
+is well and truly dead. Microsoft have
+been investing a lot to make our lives
+easier as Power Platform architects,
+solution architects, developers or
+consultants. And there is a range of
+tools available that you can utilize to
+make building solutions much easier,
+faster, and more effective for the
+client that you're serving. Now, the
+reason I feel like a video like this is
+super necessary now more than ever is
+because I feel like we have so much
+tooling available to us, but we don't
+know how to kind of mix and match the
+tooling to make sure we are actually
+building uh quality solutions in a
+faster manner. People are confused about
+the right way to develop power platform
+solutions now. And I feel like a lot of
+people are kind of going through the
+maker portal and feeling like there's an
+easier way to do something, but they're
+doing it the long way instead because
+they just don't have the knowledge or
+the tools or the capability to build out
+these solutions with the help of AI.
+Now, this video is going to be geared
+towards claude code because it's my
+personal favorite coding assistant. But
+there are a lot of organizations which
+would prefer if you use something that
+is more tied to Microsoft like GitHub
+Copilot. Now, I've already made a video
+on GitHub Copilot that you can see in
+the channel to kind of get set up with
+these Power Platform skills and also
+connect it to your environment. But I do
+want to say that the skills are
+transitionable. So, if you want to move
+over to something like GitHub Copilot
+after watching this video, it is very
+easy to do. So, it's just learning
+Power Platform Skills Overview
+another interface. But in terms of the
+tools that kind of gear and fuel these
+AI coding assistants that we're going to
+be using, those are all the same. So,
+without further ado, let's get started
+with the tutorial. I'm super excited to
+show you my process of building
+solutions with AI and getting to proof
+of concepts and iterating on those proof
+of concepts much easier. Okay, so the
+first thing we're going to cover
+regardless of the AI coding assistant
+that you're using is the tools that you
+need to install and the plugins you need
+to install to make sure your AI coding
+assistant understands the power platform
+and can connect to your environment. Now
+you can see we are in the power platform
+skills GitHub repository here and I will
+leave the link in the description so you
+can go and see this yourself. And if we
+scroll down, you can see that there are
+numerous Power Platform skills. Firstly,
+the installation guide, which is super
+useful. We'll get into some of this, not
+all of it, but if you are struggling
+with installation, this is a great way
+to kind of go through it and make sure
+you've got all of the prerequisites
+installed. And if you scroll down here,
+you can see all of the available plugins
+made available by Microsoft themselves
+to connect your AI coding assistant to
+the Power Platform. We've made videos on
+numerous of these, from code apps to
+Canvas apps to Power Automate, model
+apps, and Power Pages as well. And this
+video kind of brings all of those
+together. Each of these different
+plugins will have their own skills
+associated to them. So for example, if I
+open Power Automate and I scroll down
+here, you can see that there are
+numerous skills. I think there's nine
+for Power Automate in particular to help
+you build Power Automate solutions with
+natural language and connect it to the
+Power Platform environment that you are
+connected to. We've got things like
+setup, which is a first-time
+prerequisite setup. We've got browse
+flows which allows you to browse
+environments and flows interactively
+with the terminal. We've got guided flow
+creation with create flow and building
+flows autonomously with buildflow. You
+can see further details about this
+plug-in through scrolling down. You can
+see the MCP server that it utilizes as
+well. And this is the same pattern for
+all of these plugins. For example, the
+same goes for model apps which is going
+to be another plug-in that we are going
+to go through in this video. And if we
+scroll down here, we can see there's two
+skills available here. one for
+generative page which allows us to
+generate generative pages and then the
+other one for app builder which allows
+you to build tables, relationships,
+views, columns, etc. and add that all
+into a solution. Something else I also
+want to show you and this one goes under
+the radar a little bit but it's these
+Microsoft Power Cat skills and this will
+also be available in the description.
+Whereas the Power Platform skills I like
+to think of the core so I always
+recommend installing this nevertheless
+because this is going to be the main one
+that you use. The Power Cat skills are
+basically uh almost an addition to those
+skills, a complement if you would. This
+is developed by the Microsoft Power Cat
+team and is constantly being added to as
+well. And if you scroll down here, you
+can see there's different skills
+available like Power Cat adoption which
+generates a polished five slide HTML
+customer story deck, Power Cat Canvas
+apps which allows you to analyze the
+canvas performance. even niche topics
+like going from info path to canvas
+which is something that we used to do a
+lot of but now we're not seeing so much
+because info path is long and truly dead
+I would say and you can see they've also
+got elements of data versse governance
+etc all available to you that you can
+utilize all within your coding assistant
+Installing plugins in Claude Code
+now the reason I show you this is
+because it's a a nice way to kind of
+frame the way Microsoft is investing in
+these skills you can see the power
+platform skills as the core and then the
+power cat skills almost as a layer on
+top of that to assist on those solutions
+ions as well. If you aren't familiar
+with the power cat skills, I highly
+recommend giving them an install and a
+play as well because they can help you
+in those niche scenarios. Okay, so you
+now have a good idea of the skills
+available to you kind of their power
+within the power platform. Now, how do
+we install them within Claude code? So,
+as you can see, I am now in Claude for
+desktop and I've selected Claude code
+within that. If you don't have Claude
+for desktop installed, I highly
+recommend it as it's a really good way
+to utilize Claude and is being invested
+in constantly. What I'm now going to do,
+and I always recommend this for a
+specific project, is adding a new folder
+so you can work within that project and
+have those prerequisites set up within
+that folder. So, what I'm going to do is
+add a folder here. I'm going to go to
+new folder. And then what I'm going to
+do is call this board game management.
+I'm going to press enter and then I'm
+going to select folder. What I've now
+done is selected my folder. So, you can
+see it over here. And before we do any
+development, what I'd like you to do is
+install the plugins. So, the way to do
+that is we open up the sideboard, we go
+into customize, we go into plugins here,
+and then we go into add, and then we add
+a marketplace if you haven't installed
+this at all. When you click add a
+marketplace, it's going to ask you to
+either browse anthropic sources or add
+from a repo. We're going to add from a
+repository here, and it's going to ask
+us to take the repo URL. Now, what you
+want to do is navigate back into the
+Power Platform Skills plug-in area.
+We're going to click on this, and over
+here will be the link into the
+marketplace. We can see the repo name is
+Microsoft/P Powerplatform Skills. And
+then what we want to do is just copy
+this. And then we want to paste it in
+here. And then since I already have this
+added, it's not going to do much for me.
+But then we want to sync. And then this
+will allow us to add the plugins. Once
+we've synced this, we should now have
+the ability to add these as plugins. So
+now what we're going to do is go to add
+upload plugin. And then what we want to
+do after we've added the marketplace is
+go to browse. Then we want to go to
+code. And then from here we want to
+select power platform skills. And then
+we can add all of the plugins that we
+need. You can see in my case we have
+model apps, canvas apps, power automate,
+and power pages all available to me. So
+we want to add all the ones that we
+need. And then we can click out of this.
+Okay. So now we can initialize with the
+first prompt. And I always recommend
+getting the prerequisites set up as
+illustrated within the power platform
+skills area. This will make sure you
+have the pack CLI already installed. You
+can see here already installs it
+automatically with the prere. So do make
+sure you go through these before
+following any additional steps. What
+we're going to do for our case is we're
+going to switch this from fable to opus.
+We're going to move the effort to high
+and then we are going to move this into
+bypass permissions. The first prompt
+that we're going to run is what
+environment are you connected to and can
+you please
+connect to the YouTube development
+environment under the email.
+And this is always the first prompt that
+we want to make within a new project to
+make sure that we are going to be
+building in the correct environment.
+While this is kind of loading, I'm going
+to bring up the Power Platform
+interface. And you can see we are
+currently in here. And what I always
+like to do is start by building a
+solution. Now it is true that you can
+build the solution from the AI
+interface. That's completely fine. But I
+always like to have control over
+elements which you can't go back on. So
+things like solutions, adding the
+publisher in the right way. Uh I like to
+do this all myself and then connect my
+AI agent into the solution. So in this
+case, we're going to go new solution.
+We're going to call this board game
+management.
+We're going to make the publisher power
+academy and then we are going to create.
+You can see it's now connected into the
+YouTube developer environment and if it
+hadn't then it would tell us otherwise
+and it would guide us to connecting into
+the right environment and installing the
+correct prerequisites to do so. You can
+see I'm now connected so I'm happy with
+that. But it's also asking me if I want
+to set up the data versse MCP server for
+the environment. I've asked it to. It is
+now doing it since it wasn't registered
+and it's installing any prerequisites
+that it needs to run the MCP server so
+we can connect to our data versse
+environment as well as build the
+solution within it. I always recommend
+connecting to the data versse MCP
+because it gives you some capabilities
+which aren't currently available within
+the skills. A lot of the skills do still
+utilize a data versse MCP as it is, but
+some of them do not. You can see it's
+prompting me saying it's a sign up
+dialogue. Will it pop up on my desktop
+and I should complete it? So, we'll just
+wait for this to resolve and then we can
+get started with our first prompt. You
+can see now after a bit of a long-
+winded back and forth, we've got the
+data versse MCP connected and I do need
+to restart claw to get this working. So,
+what I'm going to do is give this a
+restart and then now I should be all
+good to go. It's ran into some issues
+which is completely fine and we're just
+going to get started with the prompt.
+Okay, so the first thing we want to do
+is point this chat and what we're
+building into the solution. So the first
+thing we're going to do is say because
+we've called this board game management
+here, we're going to say please ensure
+that everything you build from this
+point forward
+is done in the
+board game management solution
+using the Power Academy
+publisher.
+And what this is doing is basically
+making sure that everything is being
+built in a contained space. So then we
+can review it and we can see all of the
+assets that we've built with AI. We're
+going to get confirmation from Claude in
+this case. And then after that start
+building our app. You can see it's
+validated that everything already exists
+and there's nothing to create. Confirms
+the MCP is working end to end because if
+we see the tools that it's used, we can
+see it's using the MCP tools and we can
+see even further how it's querying our
+environment. It's also recording this so
+all future work gets targeted by
+default. It's doing that using the
+clawed markdown file. And what a clawed
+markdown file is is for every prompt
+that goes through this particular
+project, it would basically give it
+these particular rules. So do make sure
+Building the model-driven app
+that you are making updates to the
+claude markdown file to influence these
+rules for your particular project. Okay.
+So the first skill we are going to use
+is the app builder skill. And the way
+that we can trigger our skills is with a
+forward slash and then we type the name
+and add a dash. So we're going to select
+it here. And you can see it now allows
+us to put the context of that particular
+skill. Now I've got a preconfigured
+prompt which I've put here saying that I
+want an app to run our board game
+nights. I need to track players, our
+board game library, scheduled game
+nights, who has RSVPd each night, and
+the results of every game we play, which
+game it was, which night it was played
+on, and who won. Players have a name and
+email. Board games have a name, minimum,
+maximum players, average duration in
+minutes, call the app game night HQ,
+give us sensible forms and views for
+managing all of this. And then with
+this, we can just press enter. And now
+it's going to go ahead and build the
+structure of our model driven app for
+this particular solution. So this has
+all been ingested through some context
+and it's now going to resolve on our
+data versse environment and build using
+the solution. Now, something I'd love to
+show you is within these particular
+skills, it's also calling my skills that
+I've personally created. So, in this
+case, Power Platform best practice to
+basically understand the best practice
+that I've created and utilize that
+within my build. You can see if we
+scroll down and see its reasoning, what
+it's done. It's understood that there's
+no existing tables, no app name
+collision, and the solution question is
+already settled. It's now going through
+the configured skills responses. And in
+terms of this model app skill, the first
+thing that it will do is it will
+understand the personas and jobs to be
+done. So it can map your tables and
+security roles as needed. It's asking
+who will use the game night HQ and does
+my read of their jobs cover it. So in
+this case, it's asking if we want two
+personas for organizer and player. We're
+going to say yes and submit. And now
+what this will resolve to is building
+those security roles and linking them to
+the tables as required. Now what Claude
+has done nicely is it's confirmed us all
+of the tables that it's going to create
+with the right prefix as well. due to
+the solution player board game night
+RSVP and game result the primary columns
+the columns the knife icons as well it's
+given us all the relationships broken
+down so we can understand how this would
+all look too and if we open this up it's
+asked us a series of more questions of
+how this will all work it's also asked
+us aligning with the power platform best
+practices skills that I've configured in
+my environment to use status and status
+code and it's asked us which reasons
+should deactivate the record so in this
+case we're going to say only cancelled
+To keep things simple, it's asking us
+how a game night should be titled. We're
+going to say a text name that you type.
+And then it's asking us for the
+complexity and fun rating, choice or
+whole numbers. We're going to say both
+whole numbers. It's also given us some
+drawbacks as well, saying that charts
+require choice columns, so the app ships
+with none. And now, to be honest, when
+I'm reading this, I'm just going to go
+with label choices instead and submit.
+So you can see with the skill because
+we're building such a comprehensive
+solution, we have an iterative plan that
+goes back and forth to make sure
+everything that it's doing is right
+before it actually starts any work. You
+can see that now all the reasoning has
+finished. If I scroll through this, it
+has given me a whole preview verbatim of
+what we're to expect. It's giving me the
+data model, the site map, the views and
+the charts, how they're going to work,
+the forms as well, the generative pages
+and how these are going to function with
+the different tables, the security
+roles, so the organizer and also the
+player
+and also a design contract with the
+accent color being this and everything
+else configured here too. Now, I do
+envision this changing because it is
+very blocky to look at. And this model
+app skill in particular is currently
+still in preview at this time of
+recording, but it's a really nice way to
+just get a highle overview of what it's
+going to create before it does it. You
+can see Claude has now self-generated a
+build plan with all of the context so I
+get one more layer before it goes off
+and completes the build in auto mode.
+So, what I'm going to do is accept and
+enter auto mode. And then I'm going to
+switch this over to bypass permissions
+so we can have a fully autonomous state.
+So, here's one of the best things about
+using Claude and why it's one of my
+favorite tools to build solutions within
+the Power Platform. And the reason for
+that is because we can obviously have
+multiple chats that stem within one
+separate project. So, what I'm going to
+do is just close out of this plan and
+I'm going to open up a new chat. So, I'm
+going to go to new and we're going to
+stay in the board game management
+folder. What I can do now here is build
+Building a Power Automate flow
+a Power Automate flow to complement the
+solution while the solution is being
+built within another chat. And the way
+I'm going to do that is do a /build
+flow. And we're going to select the
+power automate build flow here. And then
+we're going to type the description to
+say build me a cloud flow which is
+automated. And then we're going to say
+when a game night is created in data
+versse with the status of scheduled then
+I want you to email this email with the
+confirmation and the details within the
+email and the link back into the record.
+Now obviously something we need to keep
+in mind and this is just a nice tip
+within the flow of work is we need to
+make sure the dependencies are created
+before we create this cloud flow because
+obviously we need the game night table
+created within the solution before it
+can actually go and build this. So I'm
+going to open up the maker studio and
+then I'm going to do a refresh like this
+and then from this point you can see we
+currently don't have the tables created
+within the solution. So we're going to
+wait for those to get created and then
+we can send over that flow of work so
+they can be created in conjunction. Now
+what we're going to do is reopen Claude
+and open up the other chat to see how
+that's going. You can see right now it's
+telling us it needs input. So we can
+click on this. We can see in this case
+it's now given us the confirmation that
+the data model is complete. It did
+struggle to authenticate because the
+Azure CLI wasn't authenticated
+correctly. But now it seems like we're
+in a better place. So now the data model
+is complete. What I can do is go into
+Power Apps and you can see the three
+tables are added into the solution with
+the correct prefix. So now this is done.
+And I'm going to go back into Claude.
+I'm going to open up my new chat again.
+And you can see that this has been saved
+nicely. Sometimes the uh the skill can
+kind of go out of sync. I just like to
+make sure it's the blue version to make
+sure it gets called correctly. It
+usually does figure it out anyway, but I
+do like to do it this way uh just to
+make sure everything is working in the
+way that I want it to. So, always make
+sure that it's this nice link so we can
+call the skill directly. Then we've got
+the prompt to build the flow. And then
+we're going to go ahead and set this to
+hi. And then we are going to go and send
+this. Actually, I'm happy to put this to
+medium in the interest of time and then
+send that through. So, you can see now I
+have two sessions running in conjunction
+with each other to work on one solution.
+Whereas previously, if I was in the
+maker portal, I'd be, you know, clicking
+through the model driven app, allocating
+the forms, the views, etc., and that
+could take me hours of work. Whereas in
+this case, I've kind of got two stems
+running of the same solution so I can
+get to a proof of concept much quicker.
+You can see now it has gone and built
+the published flow which is game night
+scheduled confirmation email. It's wired
+in the right table. It's looked at the
+correct status code and it's then used
+the send an email connection to send me
+the email. Now if I come into the
+solution and give it a refresh, you can
+see it hasn't built it in here even
+though it should have since I did
+specify it within the claw document. But
+in this case it's fine. So we can just
+add it since it's a power automate flow.
+It doesn't have too much of an impact.
+And then we're going to look for game
+nights. We're going to add this in. And
+you can see this is kind of one of the
+flaws with working with AI. Sometimes
+it's not going to go the way that you
+want it to if you don't specify the
+correct areas. So we have now added this
+to the solution. We're going to wait for
+this to come in. And now it's in here.
+We're just going to go and edit this.
+Building the Canvas app
+And now you can see we've got a very
+simple Power Automate flow with a
+condition checks the status reason for
+the game night table. And then it sends
+an email confirmation into my email with
+this body. Now, if I come out of this,
+now if I come out of this and take a
+look at the other chat to see the
+progress that it's made. If I just come
+out here, go to YouTube development, you
+can see it's still going through and
+building the different pages that it
+needs to build. With this being said, I
+am all set to set another flow and build
+the canvas app. So, what I will do here
+is I'll go to new, make sure I'm working
+in the right folder, and what I like to
+do just to reference the Power Platform
+skills is if I'm looking for a specific
+one, I'll go into the GitHub repo. I'll
+scroll down and for example I want to
+build a canvas app now. So I'm going to
+click on canvas app. Scroll down here
+and we can see the /canvas app skill is
+what we need to create. So what we're
+going to do is we're going to come back
+into claude. We're going to go to /
+canvanvas app. Make sure we have
+selected the right skill and then we are
+going to give it the prompt to create
+the canvas app. We're going to paste
+this in. Build a simple phone friendly
+canvas app called scorekeeper for login
+results at the table. One flow through
+the app. Pick tonight's game night. Pick
+the board game that we just played. Pick
+the winner from the players who RSVPd is
+going. Give the game a rating out of
+five and add an optional note and save
+it as play result in datav. Big buttons
+dark theme needs to be usable while
+holding a drink. Interesting. Okay, so
+you can see this is AI generated in
+terms of the prompt. Uh but
+nevertheless, we're going to go ahead
+and press enter. And now we have a third
+stem going in terms of the canvas app
+development being built within the
+solution. Now, I didn't specify for it
+to build in the solution, but it's fine
+again because it is just a canvas app
+that we can just add into the solution.
+What this kind of works the best for
+when you want to guide it into a
+solution is the model app skill because
+it just builds so many components. And
+speaking of the devil, we're just going
+to go and take a look at that as well
+and see how that's been going. You can
+see it's struggling to build the
+generative page and we're going to see
+if it can resolve itself by the end of
+this. We're going to move over to the
+canvas app because it might ask me some
+questions and we're going to wait for
+these solutions to work in conjunction.
+Now we're looking at the canvas app
+chat. You can see that there is a gap
+that it's found where there's nowhere to
+put the notes. It says power academy
+game result has board game, game night,
+winner, and fundra, but no note column.
+Everything else in your flow maps
+exactly. So we're going to say add the
+power academy note column before
+building the app. You can see here it's
+found that we need to upgrade the pack
+CLI to create the generative page. So
+we're going to get it to do that before
+it actually does create the generative
+page as it's one of the prerequisites of
+the solution. So, it's now upgrading for
+us. And this is a really good example of
+not having all of the information before
+you go and actually build something
+because it's very easy to think that you
+need everything. You need all of the
+resources. You need kind of to know how
+to to to set all this up before coming
+into it. But the thing is with something
+like Claude Code or GitHub Copilot, it
+guides you through the process. So, for
+example, here it didn't just completely
+freeze and tell me, you know, that's it.
+We're not building the generative page.
+It's explained to me that I need to
+upgrade the pack CLI which is a good
+benefit for me and it's gone and doing
+that autonomously. Something about the
+canvas app builder as well is it
+requires co-authoring sessions to build
+on the apps that already exist. So this
+is something I wanted to show you before
+going into the maker studio and building
+from scratch because it's really
+important to understand that there are
+some drawbacks to this and this is one
+of them in terms of the canvas up. Now
+it's a very simple one. All I really
+need to do is we're just going to keep
+the scorekeeper here. We're just going
+to copy the scorekeeper name here. We're
+going to go into the maker portal. We're
+going to go to new app, canvas app.
+We're going to make it a phone app and
+then we're going to call this
+scorekeeper and then create. And then
+all we need to do in this case is set up
+co-authoring. Now, it's a bit of a
+pre-step, but you can see it introduces
+you to some of the prerequisites as you
+go on. So, again, it's another really
+good example for the fact that you don't
+need to know everything before going in
+and building solutions with AI. If I
+come into the settings here and go into
+updates, I believe or is it support? I'm
+completely forgetting how to turn on
+co-authoring. I think it's updates. And
+then we go into co-authoring and turn
+this on saying we must save our app. So
+let's do that now. So the app is now
+saved. We can go into settings. We can
+go into updates. We can go into
+co-authoring updates. It's going to save
+the app again. And then we can go and
+talk to Claude and tell it that this has
+been done so it can start working on the
+canvas app. So, we're just going to say
+co-authoring
+has been activated.
+You can go and build the
+app. We're going to send that through.
+Then, we're going to open up the Power
+App. Make sure everything is set up. So,
+we're going to go into settings,
+updates, co-authoring. That's on. So,
+now it can start working on this
+application. We now navigate back to the
+Canvas app chat, which says we need to
+add all of the data sources before it
+can start working on them. So we need
+game nights, board games, RSVPs,
+players, and game results. So now we're
+going to open the canvas app. We're
+going to go into data here on the left
+hand side. So there still are elements
+where the maker portal is necessary, of
+course, to go in and verify these
+builds. One of them was game nights. So
+we're going to add that in. Then we're
+going to add data again. One of them was
+RSVPs. Going to add that in. If we go
+back, we had board games.
+Add players in game results. Then we had
+players. We're going to add that in. And
+then we had game. So that makes 1 2 3 4
+5. We go back and check. 1 2 3 4 5.
+Perfect. So we're going to go and save
+this. So it can be taken from Claude.
+And then we're going to go and say
+approved. Data sources have been added.
+It's verifying the connections are
+visible to the MCP server. And it seems
+like the model driven app has been
+created successfully. Now we're not
+going to get into everything that it's
+done, but I'm just going to open up
+make.powerups.com. power apps.com to
+take a look at the solution and see what
+it's done from the front end perspective
+rather than from the back end. We're
+going to open up the board game
+management. Go into the objects here and
+you can see it's created me about 15
+items to manage this solution. Now, all
+of these tables were created through
+Claude. As you saw, it's created me web
+resources. And if we go into the app,
+we're going to go play on Game Night HQ.
+And then now you can see that this has
+opened really nicely for me. So, it's
+created me the generative page for the
+home screen. You can see if I scroll
+down, I can see recent results. If I go
+into the leaderboard here, it's also
+created me another generative page and I
+can see who's done well and who hasn't.
+If I come into these different tables,
+you can see these really nice icons that
+have been generated as well. The views
+have been created correctly. And this is
+all stuff that you've seen through the
+model driven app video most likely. But
+you can see very quickly I've come to a
+proof of concept. And if I open one of
+these up, I can see a form and things
+have been taken away from it which don't
+need to be here. And then we have the
+correct columns that we want. Now, as a
+maker, I might come into this and change
+things and add columns, etc. But you can
+see how quickly we've moved uh into a
+proof of concept by getting all of this
+built. If I come back into the solution
+and look at the security roles, these
+have also been developed for us. And now
+we've built a full Power Platform
+solution with a Power Automate flow with
+a canvas app and a model driven app with
+the tables necessary all within the
+Claude interface. If I go into Claude
+and just check on the canvas app to see
+how it's going, it's planning the canvas
+app currently for us before it starts
+building on it. And we're going to wait
+for this to finish to check what it's
+created for us. Whilst it's doing that,
+we're going to come back into the maker
+portal, go into a cloudflow, open this
+up into the details pane, and you can
+see there's been automated tests run by
+Claude using the Power Automate skills
+to make sure that this is running before
+confirming to me. And if I open up my
+emails, I can see that I've been sent a
+notification showing the game night that
+has been created within data versse with
+the status. And let's see if this works.
+You know, this was always a bit of a
+risk. And you can see it has taken me to
+the record within the model driven app.
+Now, if you're a junior developer, that
+might take you a while to put together.
+Might even take you a few hours if you
+haven't figured out how to uh create a
+link from the model driven app and send
+it back into Outlook. But you can see
+that's been done using claude really
+nicely for me. So you can see here it's
+running the planner and it has consumed
+quite a lot of tokens. But I would
+recommend just allowing this to run
+because it's resolving on the tools that
+it's thinking about using within the
+canvas app. And of course canvas app
+architecture is a little bit different
+to regular software development. So it
+needs to kind of reason on those
+different areas. It's running different
+agents to help us do that. But again, it
+is consuming quite a lot of tokens. but
+it's one of the areas that I'd highly
+recommend applying nevertheless to make
+sure your canvas app is created in the
+right way. We can see now after the plan
+has landed, it's just gone ahead and
+started building the canvas app. We're
+completely fine with that, but you might
+want an element of approving the plan.
+So in this phase, you might press stop
+here and uh kind of go back and forth to
+make sure the plan is working properly.
+And the way that we can look at the plan
+is we just click on this. We can use
+read canvas plan and then we can see
+this bit by bit how this works. Then I'm
+just going to scroll down here and you
+can see it's building the winner screen,
+the rate screen, screen one, setup
+screen, and it's going to go through and
+make sure everything is created before
+Outro
+giving us the application to run. And
+we've now got the final piece of the
+puzzle built. You can see it's created
+the scorekeeper app. And if I go into
+make.powers.com,
+go into my solutions here. And something
+I'd like to do is just refresh the open
+tab that I've got. Don't be afraid of
+this. Just reload the site because it's
+already published the changes. So you
+don't have to worry about overriding
+those changes. Just make sure you don't
+save and publish again on an empty
+canvas app. And perfect. Just like that.
+If we open this up, you can see we have
+our scorekeeper app open here. I can
+select the game night which is tonight.
+So Friday filler night, the game we just
+played. So ticket to ride in this case.
+And then I can pick the winner. So for
+example, Tom won this one. I can go and
+rate the game. Say this is a five. Uh it
+went poorly. we can spend po poorly,
+right? And then we can go and save the
+result. Now, obviously, this canvas app
+has its problems, right? This is going
+to still take a bit of a back and forth
+iteration to make sure this works well,
+but we have the concrete proof of
+concept over here. You can see there's
+still some issues. So, for example,
+screen one is still called screen one,
+which shouldn't be the case, but it's
+got the fundamentals down. It's
+connected to the data sources. It's got
+a decent UX, even though it isn't ideal.
+you know, we have these filler icons
+here. It's linking to the right
+galleries, which is great. And then the
+next step of this case would always be
+to go in and validate this and iterate
+with claw to make sure we are fixing
+things and adapting things to align with
+our use case. So that was my end to- end
+process using claude code to build a
+full power platform solutions
+encompassing model driven apps, canvas
+apps, and power automate plus building
+the database tables as well. And you saw
+that was all done through natural
+language rather than me going in and
+configuring anything. Obviously with
+canvas apps, there was still a little
+bit of prerec that we had to do, but I
+can see this changing very quickly and
+honestly isn't too much of a hassle.
