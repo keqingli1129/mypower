@@ -39,3 +39,8 @@ approved
 Roles in FBISD Personal Productivity: Basic User, Environment Maker, Project User (no System Customizer). IS-Web team env: Teams membership only, no prvCreateEntity.
 AskUserQuestion: Your account can't create Dataverse tables… → Ask admin for a role
 Build PAUSED pending System Customizer grant. Resume: re-run the data pre-build (idempotent).
+
+## Environment switch
+User created personal Developer environment "Keqing Li Dev" (https://orgf8ec768a.crm.dynamics.com/, System Administrator).
+`pac org select --environment https://orgf8ec768a.crm.dynamics.com/`
+Recreated publisher KeqingLi (kli / 31847) + solution BoardGameManagement there. solution/ re-cloned. .maker-workspace cleared (it cached the old environment).
