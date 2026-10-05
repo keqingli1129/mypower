@@ -1,0 +1,1259 @@
+{
+  "schemaVersion": 2,
+  "solution": {
+    "uniqueName": "BoardGameManagement",
+    "displayName": "Board Game Management",
+    "publisherPrefix": "kli",
+    "description": "Game Night HQ — players, board game library, game nights, RSVPs and results (Power Academy tutorial)."
+  },
+  "app": {
+    "name": "Game Night HQ",
+    "description": "Run our board game nights: players, the game library, scheduled nights, RSVPs and results.",
+    "newLook": true
+  },
+  "personas": [
+    {
+      "persona": "Game Night Organizer",
+      "jobs": [
+        {
+          "name": "Maintain the player list",
+          "description": "Add and update the people who come to game nights",
+          "surfaces": [
+            "Players",
+            "All Players",
+            "Player"
+          ],
+          "privileges": [
+            {
+              "entity": "kli_player",
+              "access": [
+                "read",
+                "create",
+                "write",
+                "delete",
+                "append",
+                "appendTo"
+              ],
+              "scope": "organization"
+            }
+          ]
+        },
+        {
+          "name": "Curate the game library",
+          "description": "Keep the board game collection with player counts, play time and complexity",
+          "surfaces": [
+            "Board Games",
+            "Game Library",
+            "Board Game"
+          ],
+          "privileges": [
+            {
+              "entity": "kli_boardgame",
+              "access": [
+                "read",
+                "create",
+                "write",
+                "delete",
+                "append",
+                "appendTo"
+              ],
+              "scope": "organization"
+            }
+          ]
+        },
+        {
+          "name": "Schedule game nights",
+          "description": "Create upcoming nights, change their status, cancel them",
+          "surfaces": [
+            "Game Night Schedule",
+            "Game Night"
+          ],
+          "privileges": [
+            {
+              "entity": "kli_gamenight",
+              "access": [
+                "read",
+                "create",
+                "write",
+                "delete",
+                "append",
+                "appendTo"
+              ],
+              "scope": "organization"
+            }
+          ]
+        },
+        {
+          "name": "Track RSVPs",
+          "description": "See who is going to each night and record responses on players' behalf",
+          "surfaces": [
+            "RSVPs by Night",
+            "Game Night"
+          ],
+          "privileges": [
+            {
+              "entity": "kli_rsvp",
+              "access": [
+                "read",
+                "create",
+                "write",
+                "delete",
+                "append",
+                "appendTo"
+              ],
+              "scope": "organization"
+            },
+            {
+              "entity": "kli_gamenight",
+              "access": [
+                "read",
+                "appendTo"
+              ],
+              "scope": "organization"
+            },
+            {
+              "entity": "kli_player",
+              "access": [
+                "read",
+                "appendTo"
+              ],
+              "scope": "organization"
+            }
+          ]
+        },
+        {
+          "name": "Record game results",
+          "description": "Log which game was played on which night, who won, and how fun it was",
+          "surfaces": [
+            "Game Result",
+            "Recent Results"
+          ],
+          "privileges": [
+            {
+              "entity": "kli_gameresult",
+              "access": [
+                "read",
+                "create",
+                "write",
+                "delete",
+                "append",
+                "appendTo"
+              ],
+              "scope": "organization"
+            },
+            {
+              "entity": "kli_gamenight",
+              "access": [
+                "read",
+                "appendTo"
+              ],
+              "scope": "organization"
+            },
+            {
+              "entity": "kli_boardgame",
+              "access": [
+                "read",
+                "appendTo"
+              ],
+              "scope": "organization"
+            },
+            {
+              "entity": "kli_player",
+              "access": [
+                "read",
+                "appendTo"
+              ],
+              "scope": "organization"
+            }
+          ]
+        },
+        {
+          "name": "See how the group is doing",
+          "description": "At-a-glance home: next night, recent results, leaderboard of winners",
+          "surfaces": [
+            "home",
+            "leaderboard"
+          ],
+          "privileges": [
+            {
+              "entity": "kli_gamenight",
+              "access": [
+                "read"
+              ],
+              "scope": "organization"
+            },
+            {
+              "entity": "kli_rsvp",
+              "access": [
+                "read"
+              ],
+              "scope": "organization"
+            },
+            {
+              "entity": "kli_gameresult",
+              "access": [
+                "read"
+              ],
+              "scope": "organization"
+            },
+            {
+              "entity": "kli_boardgame",
+              "access": [
+                "read"
+              ],
+              "scope": "organization"
+            },
+            {
+              "entity": "kli_player",
+              "access": [
+                "read"
+              ],
+              "scope": "organization"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "persona": "Game Night Player",
+      "jobs": [
+        {
+          "name": "See upcoming game nights",
+          "description": "Find out when and where the next nights are",
+          "surfaces": [
+            "home",
+            "Game Nights This Week",
+            "Game Night Schedule"
+          ],
+          "privileges": [
+            {
+              "entity": "kli_gamenight",
+              "access": [
+                "read"
+              ],
+              "scope": "organization"
+            },
+            {
+              "entity": "kli_rsvp",
+              "access": [
+                "read"
+              ],
+              "scope": "organization"
+            }
+          ]
+        },
+        {
+          "name": "RSVP to a game night",
+          "description": "Say whether I am going",
+          "surfaces": [
+            "RSVP",
+            "Game Night"
+          ],
+          "privileges": [
+            {
+              "entity": "kli_rsvp",
+              "access": [
+                "create",
+                "write",
+                "append"
+              ],
+              "scope": "user"
+            },
+            {
+              "entity": "kli_rsvp",
+              "access": [
+                "read"
+              ],
+              "scope": "organization"
+            },
+            {
+              "entity": "kli_gamenight",
+              "access": [
+                "read",
+                "appendTo"
+              ],
+              "scope": "organization"
+            },
+            {
+              "entity": "kli_player",
+              "access": [
+                "read",
+                "appendTo"
+              ],
+              "scope": "organization"
+            }
+          ]
+        },
+        {
+          "name": "Browse the game library",
+          "description": "See which games we own and how many players they need",
+          "surfaces": [
+            "Game Library"
+          ],
+          "privileges": [
+            {
+              "entity": "kli_boardgame",
+              "access": [
+                "read"
+              ],
+              "scope": "organization"
+            }
+          ]
+        },
+        {
+          "name": "Check results and the leaderboard",
+          "description": "See who won what and who is on top",
+          "surfaces": [
+            "leaderboard",
+            "Recent Results"
+          ],
+          "privileges": [
+            {
+              "entity": "kli_gameresult",
+              "access": [
+                "read"
+              ],
+              "scope": "organization"
+            },
+            {
+              "entity": "kli_player",
+              "access": [
+                "read"
+              ],
+              "scope": "organization"
+            },
+            {
+              "entity": "kli_boardgame",
+              "access": [
+                "read"
+              ],
+              "scope": "organization"
+            }
+          ]
+        }
+      ],
+      "excludes": [
+        "Scheduling or cancelling game nights — organizers only",
+        "Editing the game library or player list — organizers only"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "schemaName": "kli_player",
+      "displayName": "Player",
+      "pluralName": "Players",
+      "description": "A person who attends game nights; RSVPs and wins link back to them.",
+      "iconDescription": "a single person silhouette — round head above rounded shoulders",
+      "hasNotes": false,
+      "primaryAttribute": {
+        "schemaName": "kli_name",
+        "displayName": "Name",
+        "required": true
+      },
+      "columns": [
+        {
+          "schemaName": "kli_email",
+          "displayName": "Email",
+          "type": "Text",
+          "format": "Email",
+          "maxLength": 200,
+          "required": "recommended",
+          "description": "Where game-night invitations and confirmations are sent."
+        }
+      ],
+      "vectorIcon": "kli_player_icon"
+    },
+    {
+      "schemaName": "kli_boardgame",
+      "displayName": "Board Game",
+      "pluralName": "Board Games",
+      "description": "A game in our library, with the player range and typical play time used to pick games for a night.",
+      "iconDescription": "a die face showing five pips",
+      "primaryAttribute": {
+        "schemaName": "kli_name",
+        "displayName": "Name",
+        "required": true
+      },
+      "columns": [
+        {
+          "schemaName": "kli_minplayers",
+          "displayName": "Minimum Players",
+          "type": "Integer",
+          "minValue": 1,
+          "maxValue": 20,
+          "required": "recommended",
+          "description": "Fewest players the game supports; used to check a night has enough RSVPs."
+        },
+        {
+          "schemaName": "kli_maxplayers",
+          "displayName": "Maximum Players",
+          "type": "Integer",
+          "minValue": 1,
+          "maxValue": 20,
+          "required": "recommended",
+          "description": "Most players the game supports."
+        },
+        {
+          "schemaName": "kli_avgduration",
+          "displayName": "Average Duration",
+          "type": "Integer",
+          "integerFormat": "Duration",
+          "minValue": 0,
+          "maxValue": 1440,
+          "description": "Typical play time in minutes; helps plan how many games fit in a night."
+        },
+        {
+          "schemaName": "kli_complexity",
+          "displayName": "Complexity",
+          "type": "Choice",
+          "options": [
+            "Light",
+            "Medium",
+            "Heavy"
+          ],
+          "description": "How hard the rules are to learn; drives the library-by-complexity chart."
+        }
+      ],
+      "vectorIcon": "kli_boardgame_icon"
+    },
+    {
+      "schemaName": "kli_gamenight",
+      "displayName": "Game Night",
+      "pluralName": "Game Nights",
+      "description": "A scheduled evening of games. Status reason Scheduled → Played; Cancelled deactivates it. A new Scheduled night triggers the confirmation email flow.",
+      "iconDescription": "a calendar page with a small star in the middle",
+      "primaryAttribute": {
+        "schemaName": "kli_name",
+        "displayName": "Title",
+        "required": true
+      },
+      "statusReasons": [
+        {
+          "label": "Scheduled",
+          "state": "Active"
+        },
+        {
+          "label": "Played",
+          "state": "Active"
+        },
+        {
+          "label": "Cancelled",
+          "state": "Inactive"
+        }
+      ],
+      "columns": [
+        {
+          "schemaName": "kli_startson",
+          "displayName": "Starts On",
+          "type": "DateTime",
+          "dateFormat": "DateAndTime",
+          "required": true,
+          "description": "When the night starts; drives upcoming/past views and the home page countdown."
+        },
+        {
+          "schemaName": "kli_location",
+          "displayName": "Location",
+          "type": "Text",
+          "maxLength": 200,
+          "description": "Whose house or which venue."
+        }
+      ],
+      "vectorIcon": "kli_gamenight_icon"
+    },
+    {
+      "schemaName": "kli_rsvp",
+      "displayName": "RSVP",
+      "pluralName": "RSVPs",
+      "description": "One player's response for one game night (junction between Player and Game Night).",
+      "iconDescription": "an envelope with a checkmark on its front",
+      "primaryAttribute": {
+        "schemaName": "kli_name",
+        "displayName": "Name"
+      },
+      "columns": [
+        {
+          "schemaName": "kli_response",
+          "displayName": "Response",
+          "type": "Choice",
+          "options": [
+            "Going",
+            "Maybe",
+            "Not Going"
+          ],
+          "required": true,
+          "description": "Whether the player is coming; Going players are the winner candidates in the Scorekeeper app."
+        }
+      ],
+      "vectorIcon": "kli_rsvp_icon"
+    },
+    {
+      "schemaName": "kli_gameresult",
+      "displayName": "Game Result",
+      "pluralName": "Game Results",
+      "description": "The outcome of one game played on a game night: which game, who won, and how fun it was.",
+      "iconDescription": "a trophy cup with two handles on a small base",
+      "primaryAttribute": {
+        "schemaName": "kli_name",
+        "displayName": "Name"
+      },
+      "columns": [
+        {
+          "schemaName": "kli_funrating",
+          "displayName": "Fun Rating",
+          "type": "Choice",
+          "options": [
+            "1 - Meh",
+            "2 - Okay",
+            "3 - Good",
+            "4 - Great",
+            "5 - Brilliant"
+          ],
+          "description": "How much the group enjoyed the game, out of five; a Choice so it can be charted."
+        },
+        {
+          "schemaName": "kli_note",
+          "displayName": "Note",
+          "type": "Memo",
+          "maxLength": 2000,
+          "description": "Optional comment about the game — memorable moments, rule disputes."
+        }
+      ],
+      "vectorIcon": "kli_gameresult_icon"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "OneToMany",
+      "referenced": "kli_gamenight",
+      "referencing": "kli_rsvp",
+      "lookup": {
+        "schemaName": "kli_GameNightId",
+        "displayName": "Game Night"
+      }
+    },
+    {
+      "type": "OneToMany",
+      "referenced": "kli_player",
+      "referencing": "kli_rsvp",
+      "lookup": {
+        "schemaName": "kli_PlayerId",
+        "displayName": "Player"
+      }
+    },
+    {
+      "type": "OneToMany",
+      "referenced": "kli_gamenight",
+      "referencing": "kli_gameresult",
+      "lookup": {
+        "schemaName": "kli_GameNightId",
+        "displayName": "Game Night"
+      }
+    },
+    {
+      "type": "OneToMany",
+      "referenced": "kli_boardgame",
+      "referencing": "kli_gameresult",
+      "lookup": {
+        "schemaName": "kli_BoardGameId",
+        "displayName": "Board Game"
+      }
+    },
+    {
+      "type": "OneToMany",
+      "referenced": "kli_player",
+      "referencing": "kli_gameresult",
+      "lookup": {
+        "schemaName": "kli_WinnerId",
+        "displayName": "Winner"
+      }
+    }
+  ],
+  "webResources": [
+    {
+      "name": "kli_player_icon",
+      "displayName": "Player icon",
+      "type": "svg",
+      "content": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='currentColor' fill-rule='evenodd' d='M12 2a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 12c5.5 0 9 2.7 9 6v2H3v-2c0-3.3 3.5-6 9-6Z'/></svg>",
+      "description": "Table icon for Player: a single person silhouette — round head above rounded shoulders."
+    },
+    {
+      "name": "kli_boardgame_icon",
+      "displayName": "Board Game icon",
+      "type": "svg",
+      "content": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='currentColor' fill-rule='evenodd' d='M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm3 3.5a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3Zm8 0a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3Zm-4 4a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3Zm-4 4a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3Zm8 0a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3Z'/></svg>",
+      "description": "Table icon for Board Game: a die face showing five pips."
+    },
+    {
+      "name": "kli_gamenight_icon",
+      "displayName": "Game Night icon",
+      "type": "svg",
+      "content": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='currentColor' fill-rule='evenodd' d='M7 2h2v2h6V2h2v2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2V2ZM5 9v11h14V9H5Zm7 1.5 1.2 2.5 2.8.4-2 1.9.5 2.7-2.5-1.3-2.5 1.3.5-2.7-2-1.9 2.8-.4 1.2-2.5Z'/></svg>",
+      "description": "Table icon for Game Night: a calendar page with a small star in the middle."
+    },
+    {
+      "name": "kli_rsvp_icon",
+      "displayName": "RSVP icon",
+      "type": "svg",
+      "content": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='currentColor' fill-rule='evenodd' d='M2 6.5V18a2 2 0 0 0 2 2h9.5A6 6 0 0 1 22 12.3V6.5l-10 6-10-6ZM3 4.5l9 5.4 9-5.4A2 2 0 0 0 20 4H4a2 2 0 0 0-1 .5ZM18 13a5 5 0 1 0 0 10a5 5 0 0 0 0-10Zm2.3 3.3 1 1-4 4-2.6-2.6 1-1 1.6 1.6 3-3Z'/></svg>",
+      "description": "Table icon for RSVP: an envelope with a checkmark on its front."
+    },
+    {
+      "name": "kli_gameresult_icon",
+      "displayName": "Game Result icon",
+      "type": "svg",
+      "content": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='currentColor' fill-rule='evenodd' d='M6 2h12v2h3v3a4 4 0 0 1-4 4h-.3A5 5 0 0 1 13 14.9V18h3v2H8v-2h3v-3.1A5 5 0 0 1 7.3 11H7a4 4 0 0 1-4-4V4h3V2ZM5 6v1a2 2 0 0 0 1 1.7V6H5Zm13 0v2.7A2 2 0 0 0 19 7V6h-1Z'/></svg>",
+      "description": "Table icon for Game Result: a trophy cup with two handles on a small base."
+    }
+  ],
+  "views": [
+    {
+      "entity": "kli_player",
+      "name": "All Players",
+      "columns": [
+        "kli_name",
+        "kli_email"
+      ],
+      "sort": [
+        {
+          "attr": "kli_name",
+          "dir": "asc"
+        }
+      ],
+      "activeOnly": true,
+      "description": "Everyone in the group, alphabetical — the organizer's player list."
+    },
+    {
+      "entity": "kli_boardgame",
+      "name": "Game Library",
+      "columns": [
+        "kli_name",
+        "kli_minplayers",
+        "kli_maxplayers",
+        "kli_avgduration",
+        "kli_complexity"
+      ],
+      "sort": [
+        {
+          "attr": "kli_name",
+          "dir": "asc"
+        }
+      ],
+      "activeOnly": true,
+      "description": "The whole collection with player range, play time and complexity — for picking what to play."
+    },
+    {
+      "entity": "kli_gamenight",
+      "name": "Game Night Schedule",
+      "columns": [
+        "kli_name",
+        "kli_startson",
+        "kli_location",
+        "statuscode"
+      ],
+      "sort": [
+        {
+          "attr": "kli_startson",
+          "dir": "asc"
+        }
+      ],
+      "activeOnly": true,
+      "description": "Scheduled and played nights in date order (cancelled nights drop out because they are inactive)."
+    },
+    {
+      "entity": "kli_gamenight",
+      "name": "Game Nights This Week",
+      "columns": [
+        "kli_name",
+        "kli_startson",
+        "kli_location"
+      ],
+      "sort": [
+        {
+          "attr": "kli_startson",
+          "dir": "asc"
+        }
+      ],
+      "activeOnly": true,
+      "filters": [
+        {
+          "attr": "kli_startson",
+          "op": "this-week"
+        }
+      ],
+      "description": "Answers 'what's on this week?' for players and organizers."
+    },
+    {
+      "entity": "kli_rsvp",
+      "name": "RSVPs by Night",
+      "columns": [
+        "kli_name",
+        "kli_gamenightid",
+        "kli_playerid",
+        "kli_response"
+      ],
+      "sort": [
+        {
+          "attr": "kli_gamenightid",
+          "dir": "asc"
+        }
+      ],
+      "activeOnly": true,
+      "description": "Every response grouped by night — the organizer's headcount list."
+    },
+    {
+      "entity": "kli_gameresult",
+      "name": "Recent Results",
+      "columns": [
+        "kli_name",
+        "kli_gamenightid",
+        "kli_boardgameid",
+        "kli_winnerid",
+        "kli_funrating"
+      ],
+      "sort": [
+        {
+          "attr": "createdon",
+          "dir": "desc"
+        }
+      ],
+      "activeOnly": true,
+      "description": "Latest games played first — who won what and how fun it was."
+    }
+  ],
+  "charts": [
+    {
+      "entity": "kli_boardgame",
+      "name": "Library by Complexity",
+      "chartType": "Pie",
+      "groupBy": "kli_complexity",
+      "measure": "count",
+      "description": "Balance of light vs heavy games in the collection."
+    },
+    {
+      "entity": "kli_rsvp",
+      "name": "RSVPs by Response",
+      "chartType": "Pie",
+      "groupBy": "kli_response",
+      "measure": "count",
+      "description": "How many are going, maybe, or not going."
+    },
+    {
+      "entity": "kli_gameresult",
+      "name": "Results by Fun Rating",
+      "chartType": "Column",
+      "groupBy": "kli_funrating",
+      "measure": "count",
+      "description": "How much the group has enjoyed the games played."
+    }
+  ],
+  "forms": [
+    {
+      "entity": "kli_player",
+      "type": "main",
+      "name": "Player",
+      "layout": "auto",
+      "deactivateOtherMainForms": true,
+      "description": "A player's details with their RSVPs and wins.",
+      "subgrids": [
+        {
+          "childEntity": "kli_rsvp",
+          "view": "RSVPs by Night",
+          "label": "RSVPs"
+        },
+        {
+          "childEntity": "kli_gameresult",
+          "view": "Recent Results",
+          "label": "Wins"
+        }
+      ]
+    },
+    {
+      "entity": "kli_boardgame",
+      "type": "main",
+      "name": "Board Game",
+      "layout": "auto",
+      "deactivateOtherMainForms": true,
+      "description": "A game in the library and every time it has been played.",
+      "subgrids": [
+        {
+          "childEntity": "kli_gameresult",
+          "view": "Recent Results",
+          "label": "Plays"
+        }
+      ]
+    },
+    {
+      "entity": "kli_gamenight",
+      "type": "main",
+      "name": "Game Night",
+      "layout": "auto",
+      "deactivateOtherMainForms": true,
+      "description": "One night: when and where, who is coming, and what was played.",
+      "subgrids": [
+        {
+          "childEntity": "kli_rsvp",
+          "view": "RSVPs by Night",
+          "label": "Who's Coming"
+        },
+        {
+          "childEntity": "kli_gameresult",
+          "view": "Recent Results",
+          "label": "Games Played"
+        }
+      ]
+    },
+    {
+      "entity": "kli_rsvp",
+      "type": "main",
+      "name": "RSVP",
+      "layout": "auto",
+      "deactivateOtherMainForms": true,
+      "description": "One player's response to one game night."
+    },
+    {
+      "entity": "kli_gameresult",
+      "type": "main",
+      "name": "Game Result",
+      "layout": "auto",
+      "deactivateOtherMainForms": true,
+      "description": "Record a game: night, game, winner, fun rating and a note."
+    }
+  ],
+  "pages": [
+    {
+      "key": "home",
+      "name": "Game Night Home",
+      "purpose": "Landing page: the next scheduled game night as a hero card (title, date/time, location, countdown, Going/Maybe counts from RSVPs), the next few upcoming nights, and the most recent game results (game, winner, fun rating).",
+      "dataSources": [
+        "kli_gamenight",
+        "kli_rsvp",
+        "kli_gameresult",
+        "kli_boardgame",
+        "kli_player"
+      ],
+      "source": {
+        "kind": "intent"
+      }
+    },
+    {
+      "key": "leaderboard",
+      "name": "Leaderboard",
+      "purpose": "Analytics: players ranked by number of wins (with win count bars), most-played board games, and average fun rating per game, computed from Game Results.",
+      "dataSources": [
+        "kli_gameresult",
+        "kli_player",
+        "kli_boardgame"
+      ],
+      "source": {
+        "kind": "intent"
+      }
+    }
+  ],
+  "design": {
+    "accentColor": "#6b3fa0",
+    "density": "comfortable",
+    "cornerRadius": "medium",
+    "darkMode": "system",
+    "layout": "cards"
+  },
+  "appShell": {
+    "areas": [
+      {
+        "label": "Game Night HQ",
+        "groups": [
+          {
+            "label": "Overview",
+            "subAreas": [
+              {
+                "page": "home",
+                "title": "Home",
+                "iconDescription": "a house"
+              },
+              {
+                "page": "leaderboard",
+                "title": "Leaderboard",
+                "iconDescription": "a podium with three steps"
+              }
+            ]
+          },
+          {
+            "label": "Game Nights",
+            "subAreas": [
+              {
+                "entity": "kli_gamenight",
+                "title": "Game Nights"
+              },
+              {
+                "entity": "kli_rsvp",
+                "title": "RSVPs"
+              },
+              {
+                "entity": "kli_gameresult",
+                "title": "Game Results"
+              }
+            ]
+          },
+          {
+            "label": "Library & People",
+            "subAreas": [
+              {
+                "entity": "kli_boardgame",
+                "title": "Board Games"
+              },
+              {
+                "entity": "kli_player",
+                "title": "Players"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sampleData": {
+    "kli_player": [
+      {
+        "kli_name": "Tom Nguyen",
+        "kli_email": "tom.nguyen@example.com"
+      },
+      {
+        "kli_name": "Priya Shah",
+        "kli_email": "priya.shah@example.com"
+      },
+      {
+        "kli_name": "Marcus Bell",
+        "kli_email": "marcus.bell@example.com"
+      },
+      {
+        "kli_name": "Elena Garcia",
+        "kli_email": "elena.garcia@example.com"
+      },
+      {
+        "kli_name": "Sam O'Connor",
+        "kli_email": "sam.oconnor@example.com"
+      }
+    ],
+    "kli_boardgame": [
+      {
+        "kli_name": "Ticket to Ride",
+        "kli_minplayers": 2,
+        "kli_maxplayers": 5,
+        "kli_avgduration": 60,
+        "kli_complexity": "Light"
+      },
+      {
+        "kli_name": "Catan",
+        "kli_minplayers": 3,
+        "kli_maxplayers": 4,
+        "kli_avgduration": 90,
+        "kli_complexity": "Medium"
+      },
+      {
+        "kli_name": "Codenames",
+        "kli_minplayers": 4,
+        "kli_maxplayers": 8,
+        "kli_avgduration": 20,
+        "kli_complexity": "Light"
+      },
+      {
+        "kli_name": "Wingspan",
+        "kli_minplayers": 1,
+        "kli_maxplayers": 5,
+        "kli_avgduration": 70,
+        "kli_complexity": "Medium"
+      },
+      {
+        "kli_name": "Terraforming Mars",
+        "kli_minplayers": 1,
+        "kli_maxplayers": 5,
+        "kli_avgduration": 120,
+        "kli_complexity": "Heavy"
+      }
+    ],
+    "kli_gamenight": [
+      {
+        "kli_name": "September Strategy Night",
+        "kli_startson": "2026-09-25T23:30:00Z",
+        "kli_location": "Priya's house",
+        "statusReason": "Played"
+      },
+      {
+        "kli_name": "Friday Filler Night",
+        "kli_startson": "2026-10-09T23:30:00Z",
+        "kli_location": "Tom's apartment",
+        "statusReason": "Scheduled"
+      },
+      {
+        "kli_name": "Halloween Horror Games",
+        "kli_startson": "2026-10-30T23:00:00Z",
+        "kli_location": "Community room",
+        "statusReason": "Scheduled"
+      },
+      {
+        "kli_name": "Labor Day Game Day",
+        "kli_startson": "2026-09-07T18:00:00Z",
+        "kli_location": "Park pavilion",
+        "statusReason": "Cancelled"
+      }
+    ],
+    "kli_rsvp": [
+      {
+        "kli_name": "Tom – September Strategy Night",
+        "kli_response": "Going",
+        "$parents": [
+          {
+            "entity": "kli_gamenight",
+            "match": {
+              "kli_name": "September Strategy Night"
+            }
+          },
+          {
+            "entity": "kli_player",
+            "match": {
+              "kli_name": "Tom Nguyen"
+            }
+          }
+        ]
+      },
+      {
+        "kli_name": "Priya – September Strategy Night",
+        "kli_response": "Going",
+        "$parents": [
+          {
+            "entity": "kli_gamenight",
+            "match": {
+              "kli_name": "September Strategy Night"
+            }
+          },
+          {
+            "entity": "kli_player",
+            "match": {
+              "kli_name": "Priya Shah"
+            }
+          }
+        ]
+      },
+      {
+        "kli_name": "Marcus – September Strategy Night",
+        "kli_response": "Going",
+        "$parents": [
+          {
+            "entity": "kli_gamenight",
+            "match": {
+              "kli_name": "September Strategy Night"
+            }
+          },
+          {
+            "entity": "kli_player",
+            "match": {
+              "kli_name": "Marcus Bell"
+            }
+          }
+        ]
+      },
+      {
+        "kli_name": "Elena – September Strategy Night",
+        "kli_response": "Not Going",
+        "$parents": [
+          {
+            "entity": "kli_gamenight",
+            "match": {
+              "kli_name": "September Strategy Night"
+            }
+          },
+          {
+            "entity": "kli_player",
+            "match": {
+              "kli_name": "Elena Garcia"
+            }
+          }
+        ]
+      },
+      {
+        "kli_name": "Tom – Friday Filler Night",
+        "kli_response": "Going",
+        "$parents": [
+          {
+            "entity": "kli_gamenight",
+            "match": {
+              "kli_name": "Friday Filler Night"
+            }
+          },
+          {
+            "entity": "kli_player",
+            "match": {
+              "kli_name": "Tom Nguyen"
+            }
+          }
+        ]
+      },
+      {
+        "kli_name": "Priya – Friday Filler Night",
+        "kli_response": "Maybe",
+        "$parents": [
+          {
+            "entity": "kli_gamenight",
+            "match": {
+              "kli_name": "Friday Filler Night"
+            }
+          },
+          {
+            "entity": "kli_player",
+            "match": {
+              "kli_name": "Priya Shah"
+            }
+          }
+        ]
+      },
+      {
+        "kli_name": "Elena – Friday Filler Night",
+        "kli_response": "Going",
+        "$parents": [
+          {
+            "entity": "kli_gamenight",
+            "match": {
+              "kli_name": "Friday Filler Night"
+            }
+          },
+          {
+            "entity": "kli_player",
+            "match": {
+              "kli_name": "Elena Garcia"
+            }
+          }
+        ]
+      },
+      {
+        "kli_name": "Sam – Friday Filler Night",
+        "kli_response": "Going",
+        "$parents": [
+          {
+            "entity": "kli_gamenight",
+            "match": {
+              "kli_name": "Friday Filler Night"
+            }
+          },
+          {
+            "entity": "kli_player",
+            "match": {
+              "kli_name": "Sam O'Connor"
+            }
+          }
+        ]
+      },
+      {
+        "kli_name": "Marcus – Halloween Horror Games",
+        "kli_response": "Going",
+        "$parents": [
+          {
+            "entity": "kli_gamenight",
+            "match": {
+              "kli_name": "Halloween Horror Games"
+            }
+          },
+          {
+            "entity": "kli_player",
+            "match": {
+              "kli_name": "Marcus Bell"
+            }
+          }
+        ]
+      },
+      {
+        "kli_name": "Sam – Halloween Horror Games",
+        "kli_response": "Maybe",
+        "$parents": [
+          {
+            "entity": "kli_gamenight",
+            "match": {
+              "kli_name": "Halloween Horror Games"
+            }
+          },
+          {
+            "entity": "kli_player",
+            "match": {
+              "kli_name": "Sam O'Connor"
+            }
+          }
+        ]
+      }
+    ],
+    "kli_gameresult": [
+      {
+        "kli_name": "Catan – September Strategy Night",
+        "kli_funrating": "4 - Great",
+        "$parents": [
+          {
+            "entity": "kli_gamenight",
+            "match": {
+              "kli_name": "September Strategy Night"
+            }
+          },
+          {
+            "entity": "kli_boardgame",
+            "match": {
+              "kli_name": "Catan"
+            }
+          },
+          {
+            "entity": "kli_player",
+            "match": {
+              "kli_name": "Priya Shah"
+            }
+          }
+        ],
+        "kli_note": "Priya hoarded all the wheat."
+      },
+      {
+        "kli_name": "Wingspan – September Strategy Night",
+        "kli_funrating": "5 - Brilliant",
+        "$parents": [
+          {
+            "entity": "kli_gamenight",
+            "match": {
+              "kli_name": "September Strategy Night"
+            }
+          },
+          {
+            "entity": "kli_boardgame",
+            "match": {
+              "kli_name": "Wingspan"
+            }
+          },
+          {
+            "entity": "kli_player",
+            "match": {
+              "kli_name": "Marcus Bell"
+            }
+          }
+        ]
+      },
+      {
+        "kli_name": "Ticket to Ride – September Strategy Night",
+        "kli_funrating": "3 - Good",
+        "$parents": [
+          {
+            "entity": "kli_gamenight",
+            "match": {
+              "kli_name": "September Strategy Night"
+            }
+          },
+          {
+            "entity": "kli_boardgame",
+            "match": {
+              "kli_name": "Ticket to Ride"
+            }
+          },
+          {
+            "entity": "kli_player",
+            "match": {
+              "kli_name": "Tom Nguyen"
+            }
+          }
+        ],
+        "kli_note": "Close finish on the last route."
+      }
+    ]
+  }
+}
