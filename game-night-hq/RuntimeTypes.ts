@@ -1,38 +1,36 @@
 ﻿// ---------------- Type Definitions which can be imported from ./RuntimeTypes -------------------------
 export interface TableRegistrations extends BaseTableRegistrations {
-    "kli_boardgame": kli_boardgame,
+    "kli_gamenight": kli_gamenight,
     "kli_gameresult": kli_gameresult,
-    "kli_player": kli_player,
+    "kli_rsvp": kli_rsvp,
 }
 export interface EnumRegistrations extends BaseEnumRegistrations {
-    "kli_boardgame-kli_complexity": kli_boardgame_kli_complexity,
-    "kli_boardgame-statecode": kli_boardgame_statecode,
-    "kli_boardgame-statuscode": kli_boardgame_statuscode,
+    "kli_gamenight-statecode": kli_gamenight_statecode,
+    "kli_gamenight-statuscode": kli_gamenight_statuscode,
     "kli_gameresult-kli_funrating": kli_gameresult_kli_funrating,
     "kli_gameresult-statecode": kli_gameresult_statecode,
     "kli_gameresult-statuscode": kli_gameresult_statuscode,
-    "kli_player-statecode": kli_player_statecode,
-    "kli_player-statuscode": kli_player_statuscode,
+    "kli_rsvp-kli_response": kli_rsvp_kli_response,
+    "kli_rsvp-statecode": kli_rsvp_statecode,
+    "kli_rsvp-statuscode": kli_rsvp_statuscode,
 }
-export type kli_boardgame = TableRow<{
+export type kli_gamenight = TableRow<{
     // Primary Key Column
-    readonly kli_boardgameid: string,
+    readonly kli_gamenightid: string,
     readonly createdbyname: string,
     readonly createdbyyominame: string,
     readonly createdonbehalfbyname: string,
     readonly createdonbehalfbyyominame: string,
-    kli_avgduration: number,
-    kli_complexity: kli_boardgame_kli_complexity,
-    kli_maxplayers: number,
-    kli_minplayers: number,
+    kli_location: string,
     kli_name: string,
+    kli_startson: Date,
     readonly modifiedbyname: string,
     readonly modifiedbyyominame: string,
     readonly modifiedonbehalfbyname: string,
     readonly modifiedonbehalfbyyominame: string,
     readonly owningbusinessunitname: string,
-    statecode: kli_boardgame_statecode,
-    statuscode: kli_boardgame_statuscode,
+    statecode: kli_gamenight_statecode,
+    statuscode: kli_gamenight_statuscode,
 }>
 
 export type kli_gameresult = TableRow<{
@@ -43,16 +41,16 @@ export type kli_gameresult = TableRow<{
     readonly createdonbehalfbyname: string,
     readonly createdonbehalfbyyominame: string,
     // Foreign Key Column
-    _kli_boardgameid_value: `/kli_boardgame(${string})`,
+    readonly _kli_boardgameid_value: `/kli_boardgame(${string})`,
     readonly kli_boardgameidname: string,
     kli_funrating: kli_gameresult_kli_funrating,
     // Foreign Key Column
-    readonly _kli_gamenightid_value: `/kli_gamenight(${string})`,
+    _kli_gamenightid_value: `/kli_gamenight(${string})`,
     readonly kli_gamenightidname: string,
     kli_name: string,
     kli_note: string,
     // Foreign Key Column
-    _kli_winnerid_value: `/kli_player(${string})`,
+    readonly _kli_winnerid_value: `/kli_player(${string})`,
     readonly kli_winneridname: string,
     readonly modifiedbyname: string,
     readonly modifiedbyyominame: string,
@@ -63,36 +61,40 @@ export type kli_gameresult = TableRow<{
     statuscode: kli_gameresult_statuscode,
 }>
 
-export type kli_player = TableRow<{
+export type kli_rsvp = TableRow<{
     // Primary Key Column
-    readonly kli_playerid: string,
+    readonly kli_rsvpid: string,
     readonly createdbyname: string,
     readonly createdbyyominame: string,
     readonly createdonbehalfbyname: string,
     readonly createdonbehalfbyyominame: string,
-    kli_email: string,
+    // Foreign Key Column
+    _kli_gamenightid_value: `/kli_gamenight(${string})`,
+    readonly kli_gamenightidname: string,
     kli_name: string,
+    // Foreign Key Column
+    readonly _kli_playerid_value: `/kli_player(${string})`,
+    readonly kli_playeridname: string,
+    kli_response: kli_rsvp_kli_response,
     readonly modifiedbyname: string,
     readonly modifiedbyyominame: string,
     readonly modifiedonbehalfbyname: string,
     readonly modifiedonbehalfbyyominame: string,
     readonly owningbusinessunitname: string,
-    statecode: kli_player_statecode,
-    statuscode: kli_player_statuscode,
+    statecode: kli_rsvp_statecode,
+    statuscode: kli_rsvp_statuscode,
 }>
 
-const enum kli_boardgame_kli_complexity {
-"Light" = 100000000,
-"Medium" = 100000001,
-"Heavy" = 100000002,
-}
-const enum kli_boardgame_statecode {
+const enum kli_gamenight_statecode {
 "Active" = 0,
 "Inactive" = 1,
 }
-const enum kli_boardgame_statuscode {
+const enum kli_gamenight_statuscode {
 "Active" = 1,
 "Inactive" = 2,
+"Scheduled" = 100000000,
+"Played" = 100000001,
+"Cancelled" = 100000002,
 }
 const enum kli_gameresult_kli_funrating {
 "1 - Meh" = 100000000,
@@ -109,11 +111,16 @@ const enum kli_gameresult_statuscode {
 "Active" = 1,
 "Inactive" = 2,
 }
-const enum kli_player_statecode {
+const enum kli_rsvp_kli_response {
+"Going" = 100000000,
+"Maybe" = 100000001,
+"Not Going" = 100000002,
+}
+const enum kli_rsvp_statecode {
 "Active" = 0,
 "Inactive" = 1,
 }
-const enum kli_player_statuscode {
+const enum kli_rsvp_statuscode {
 "Active" = 1,
 "Inactive" = 2,
 }
