@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && pa app push --solution-id 86c1d50c-2ac1-f111-aaad-6045bd08c2a1"
+
   },
   "dependencies": {
     "@microsoft/power-apps": "^1.2.5",
