@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "appId": null,
+  "appDisplayName": "Game Night",
+  "region": "prod",
+  "appType": "CodeApp",
+  "environmentId": "0f940836-d097-e42c-8597-62d9d7f17f1d",
+  "description": "Learning project: board game nights, built step by step",
+  "buildPath": "./dist",
+  "buildEntryPoint": "index.html",
+  "localAppUrl": "http://localhost:3000",
+  "logoPath": "Default",
+  "connectionReferences": {},
+  "databaseReferences": {}
+}
