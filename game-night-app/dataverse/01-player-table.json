@@ -1,0 +1,22 @@
+{
+  "@odata.type": "Microsoft.Dynamics.CRM.EntityMetadata",
+  "SchemaName": "kli_Player",
+  "DisplayName":           { "LocalizedLabels": [ { "Label": "Player",  "LanguageCode": 1033 } ] },
+  "DisplayCollectionName": { "LocalizedLabels": [ { "Label": "Players", "LanguageCode": 1033 } ] },
+  "Description":           { "LocalizedLabels": [ { "Label": "A person who comes to game nights.", "LanguageCode": 1033 } ] },
+  "OwnershipType": "UserOwned",
+  "HasActivities": false,
+  "HasNotes": false,
+  "PrimaryNameAttribute": "kli_name",
+  "Attributes": [
+    {
+      "@odata.type": "Microsoft.Dynamics.CRM.StringAttributeMetadata",
+      "SchemaName": "kli_Name",
+      "IsPrimaryName": true,
+      "MaxLength": 100,
+      "FormatName": { "Value": "Text" },
+      "RequiredLevel": { "Value": "ApplicationRequired" },
+      "DisplayName": { "LocalizedLabels": [ { "Label": "Name", "LanguageCode": 1033 } ] }
+    }
+  ]
+}
