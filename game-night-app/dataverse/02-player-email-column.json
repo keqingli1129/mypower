@@ -1,0 +1,9 @@
+{
+  "@odata.type": "Microsoft.Dynamics.CRM.StringAttributeMetadata",
+  "SchemaName": "kli_Email",
+  "DisplayName": { "LocalizedLabels": [ { "Label": "Email", "LanguageCode": 1033 } ] },
+  "Description": { "LocalizedLabels": [ { "Label": "Where game-night invitations are sent.", "LanguageCode": 1033 } ] },
+  "MaxLength": 200,
+  "FormatName": { "Value": "Email" },
+  "RequiredLevel": { "Value": "None" }
+}

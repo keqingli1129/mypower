@@ -19,7 +19,8 @@
 - [x] 7 User created the Board Game Management solution in the maker portal, added the app (Add existing), added the `deploy` npm script
 
 - [x] 8 Player table created (kli_player / entity set kli_players / primary column kli_name) in the solution — via Web API with MSCRM.SolutionUniqueName header
+- [x] 9 Email column (kli_email, Text/Email format) added to Player
 
 ## Next
-- Step 9: add Email column. Step 10: add a few players. Step 11: `pa app add data-source` (Dataverse, kli_player) and read the generated TypeScript.
+- Step 10: add a few players. Step 11: `pa app add data-source` (Dataverse, kli_player) and read the generated TypeScript.
 - Later: Board Game, Game Night, RSVP, Game Result tables, one at a time.
