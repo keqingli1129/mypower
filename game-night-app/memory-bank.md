@@ -22,7 +22,10 @@
 - [x] 9 Email column (kli_email, Text/Email format) added to Player
 - [x] 10 Three sample players added (Tom Nguyen, Priya Shah, Marcus Bell) via POST /kli_players
 - [x] 11 Connected kli_player to the app (`pa app add data-source --connector dataverse --table kli_player`): power.config.json databaseReferences "players", .power/schemas, src/generated/ (Kli_playersModel.ts, Kli_playersService.ts); build passes
+- [x] 12a `useState<number | null>(null)` + ternary display ("Loading players…")
+- [x] 12b `useEffect(..., [])` calls `Kli_playersService.getAll({ select: ['kli_name'] })`, `console.log` the result (works only in **Local Play**, not plain localhost)
+- [x] 12c `setPlayerCount(result.data?.length ?? 0)` → "We have 3 players."
 
 ## Next
-- Step 12: show how many players there are (first Kli_playersService.getAll call in App.tsx). Then list them, then an add-player form.
+- Step 13: list the players' names — keep the whole array in state (`useState<Kli_players[]>`), render with `.map()` and `key`. Then Step 14: add-player form (`Kli_playersService.create`).
 - Later: Board Game, Game Night, RSVP, Game Result tables, one at a time.
