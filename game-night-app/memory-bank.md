@@ -20,7 +20,8 @@
 
 - [x] 8 Player table created (kli_player / entity set kli_players / primary column kli_name) in the solution — via Web API with MSCRM.SolutionUniqueName header
 - [x] 9 Email column (kli_email, Text/Email format) added to Player
+- [x] 10 Three sample players added (Tom Nguyen, Priya Shah, Marcus Bell) via POST /kli_players
 
 ## Next
-- Step 10: add a few players. Step 11: `pa app add data-source` (Dataverse, kli_player) and read the generated TypeScript.
+- Step 11: `pa app add data-source` (Dataverse, kli_player) and read the generated TypeScript.
 - Later: Board Game, Game Night, RSVP, Game Result tables, one at a time.
