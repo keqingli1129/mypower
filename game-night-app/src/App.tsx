@@ -1,7 +1,14 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { Kli_playersService } from './generated/services/Kli_playersService'
 
 function App() {
   const [playerCount] = useState<number | null>(null)
+
+  useEffect(() => {
+    Kli_playersService.getAll({ select: ['kli_name'] }).then((result) => {
+      console.log('Players from Dataverse:', result)
+    })
+  }, [])
 
   return (
     <>
