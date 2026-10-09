@@ -21,7 +21,8 @@
 - [x] 8 Player table created (kli_player / entity set kli_players / primary column kli_name) in the solution — via Web API with MSCRM.SolutionUniqueName header
 - [x] 9 Email column (kli_email, Text/Email format) added to Player
 - [x] 10 Three sample players added (Tom Nguyen, Priya Shah, Marcus Bell) via POST /kli_players
+- [x] 11 Connected kli_player to the app (`pa app add data-source --connector dataverse --table kli_player`): power.config.json databaseReferences "players", .power/schemas, src/generated/ (Kli_playersModel.ts, Kli_playersService.ts); build passes
 
 ## Next
-- Step 11: `pa app add data-source` (Dataverse, kli_player) and read the generated TypeScript.
+- Step 12: show how many players there are (first Kli_playersService.getAll call in App.tsx). Then list them, then an add-player form.
 - Later: Board Game, Game Night, RSVP, Game Result tables, one at a time.

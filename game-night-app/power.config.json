@@ -11,5 +11,16 @@
   "localAppUrl": "http://localhost:3000",
   "logoPath": "Default",
   "connectionReferences": {},
-  "databaseReferences": {}
+  "databaseReferences": {
+    "default.cds": {
+      "dataSources": {
+        "players": {
+          "entitySetName": "kli_players",
+          "logicalName": "kli_player",
+          "isHidden": false
+        }
+      },
+      "environmentVariableName": ""
+    }
+  }
 }
