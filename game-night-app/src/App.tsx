@@ -13,6 +13,10 @@ function App() {
     })
   }, [])
 
+  function handleAdd() {
+    console.log('Add clicked, name =', newName)
+  }
+
   return (
     <>
       <h1>Hello, Keqing Li!</h1>
@@ -28,6 +32,7 @@ function App() {
         value={newName}
         onChange={(event) => setNewName(event.target.value)}
       />
+      <button onClick={handleAdd}>Add</button>
       <p>You typed: {newName}</p>
     </>
   )
