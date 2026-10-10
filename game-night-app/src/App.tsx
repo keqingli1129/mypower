@@ -17,6 +17,11 @@ function App() {
       <h1>Hello, Keqing Li!</h1>
       <h2>How are you?</h2>
       <p>{players === null ? 'Loading players…' : `We have ${players.length} players.`}</p>
+      <ul>
+        {players?.map((player) => (
+          <li key={player.kli_playerid}>{player.kli_name}</li>
+        ))}
+      </ul>
     </>
   )
 }
