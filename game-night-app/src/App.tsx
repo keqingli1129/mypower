@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 import { Kli_playersService } from './generated/services/Kli_playersService'
+import type { Kli_players } from './generated/models/Kli_playersModel'
 
 function App() {
-  const [playerCount, setPlayerCount] = useState<number | null>(null)
+  const [players, setPlayers] = useState<Kli_players[] | null>(null)
 
   useEffect(() => {
     Kli_playersService.getAll({ select: ['kli_name'] }).then((result) => {
       console.log('Players from Dataverse:', result)
-      setPlayerCount(result.data?.length ?? 0)
+      setPlayers(result.data ?? [])
     })
   }, [])
 
@@ -15,7 +16,7 @@ function App() {
     <>
       <h1>Hello, Keqing Li!</h1>
       <h2>How are you?</h2>
-      <p>{playerCount === null ? 'Loading players…' : `We have ${playerCount} players.`}</p>
+      <p>{players === null ? 'Loading players…' : `We have ${players.length} players.`}</p>
     </>
   )
 }
