@@ -25,7 +25,14 @@
 - [x] 12a `useState<number | null>(null)` + ternary display ("Loading players…")
 - [x] 12b `useEffect(..., [])` calls `Kli_playersService.getAll({ select: ['kli_name'] })`, `console.log` the result (works only in **Local Play**, not plain localhost)
 - [x] 12c `setPlayerCount(result.data?.length ?? 0)` → "We have 3 players."
+- [x] 13a state holds the array `useState<Kli_players[] | null>`, count = `players.length` (import type, type narrowing)
+- [x] 13b `<ul>` + `players?.map(...)` with `key={player.kli_playerid}`
+- [x] 14a controlled `<input>` (`value` + `onChange`, `useState('')` type inference)
+- [x] 14b `<button onClick={handleAdd}>` (pass the function, not `handleAdd()`)
+- [x] 14c `async`/`await` `Kli_playersService.create({ kli_name, statecode: 0 })` — TS error taught that `statecode` is required by the generated Base type
+- [x] 14d `if (newPlayer)` narrowing, `setPlayers((current) => [...(current ?? []), newPlayer])`, clear input
+- [x] 15 `disabled={newName.trim() === ''}` on the Add button
 
 ## Next
-- Step 13: list the players' names — keep the whole array in state (`useState<Kli_players[]>`), render with `.map()` and `key`. Then Step 14: add-player form (`Kli_playersService.create`).
+- Step 16: delete a player — ✕ button per row, `Kli_playersService.delete(id)`, `setPlayers(current => current.filter(...))`. Then: edit a name (update), then the second table (Board Game).
 - Later: Board Game, Game Night, RSVP, Game Result tables, one at a time.
