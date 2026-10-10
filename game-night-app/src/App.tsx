@@ -13,8 +13,9 @@ function App() {
     })
   }, [])
 
-  function handleAdd() {
-    console.log('Add clicked, name =', newName)
+  async function handleAdd() {
+    const result = await Kli_playersService.create({ kli_name: newName, statecode: 0 })
+    console.log('Created:', result)
   }
 
   return (
