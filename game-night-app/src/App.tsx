@@ -4,6 +4,7 @@ import type { Kli_players } from './generated/models/Kli_playersModel'
 
 function App() {
   const [players, setPlayers] = useState<Kli_players[] | null>(null)
+  const [newName, setNewName] = useState('')
 
   useEffect(() => {
     Kli_playersService.getAll({ select: ['kli_name'] }).then((result) => {
@@ -22,6 +23,12 @@ function App() {
           <li key={player.kli_playerid}>{player.kli_name}</li>
         ))}
       </ul>
+      <input
+        placeholder="New player name"
+        value={newName}
+        onChange={(event) => setNewName(event.target.value)}
+      />
+      <p>You typed: {newName}</p>
     </>
   )
 }
