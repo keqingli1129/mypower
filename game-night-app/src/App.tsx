@@ -38,7 +38,7 @@ function App() {
         value={newName}
         onChange={(event) => setNewName(event.target.value)}
       />
-      <button onClick={handleAdd}>Add</button>
+      <button onClick={handleAdd} disabled={newName.trim() === ''}>Add</button>
     </>
   )
 }
