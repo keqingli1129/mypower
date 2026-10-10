@@ -16,6 +16,11 @@ function App() {
   async function handleAdd() {
     const result = await Kli_playersService.create({ kli_name: newName, statecode: 0 })
     console.log('Created:', result)
+    const newPlayer = result.data
+    if (newPlayer) {
+      setPlayers((current) => [...(current ?? []), newPlayer])
+      setNewName('')
+    }
   }
 
   return (
@@ -34,7 +39,6 @@ function App() {
         onChange={(event) => setNewName(event.target.value)}
       />
       <button onClick={handleAdd}>Add</button>
-      <p>You typed: {newName}</p>
     </>
   )
 }
