@@ -81,6 +81,7 @@
     </Publisher>
     <RootComponents>
       <RootComponent type="1" schemaName="kli_player" behavior="0" />
+      <RootComponent type="20" id="{a5db518b-c3c5-f111-aaaf-70a8a59aa8aa}" behavior="0" />
       <RootComponent type="29" id="{2142bc9f-85c5-f111-aaaf-70a8a59aa8aa}" behavior="0" />
       <RootComponent type="300" schemaName="crf6e_gamenight_1ace2" behavior="0" />
       <RootComponent type="300" schemaName="kli_gamenightplayers_eada4" behavior="0" />
