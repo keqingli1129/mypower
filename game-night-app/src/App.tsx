@@ -23,6 +23,10 @@ function App() {
     }
   }
 
+  function handleDelete(id: string) {
+    console.log('Delete clicked, id =', id)
+  }
+
   return (
     <>
       <h1>Hello, Keqing Li!</h1>
@@ -30,7 +34,10 @@ function App() {
       <p>{players === null ? 'Loading players…' : `We have ${players.length} players.`}</p>
       <ul>
         {players?.map((player) => (
-          <li key={player.kli_playerid}>{player.kli_name}</li>
+          <li key={player.kli_playerid}>
+            {player.kli_name}{' '}
+            <button onClick={() => handleDelete(player.kli_playerid)}>✕</button>
+          </li>
         ))}
       </ul>
       <input
