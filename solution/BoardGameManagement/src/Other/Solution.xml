@@ -84,7 +84,22 @@
       <RootComponent type="29" id="{2142bc9f-85c5-f111-aaaf-70a8a59aa8aa}" behavior="0" />
       <RootComponent type="300" schemaName="crf6e_gamenight_1ace2" behavior="0" />
       <RootComponent type="300" schemaName="kli_gamenightplayers_eada4" behavior="0" />
+      <RootComponent type="62" schemaName="kli_GameNightAdmin" behavior="0" />
+      <RootComponent type="80" schemaName="kli_GameNightAdmin" behavior="0" />
     </RootComponents>
-    <MissingDependencies />
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)">
+          <package appName="AppModule Web Resources Package" version="2.5">AppModuleWebResources (2.5)</package>
+        </Required>
+        <Dependent type="80" schemaName="kli_GameNightAdmin" displayName="Game Night Admin" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.20)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.25">PowerAppsAppFramework_Anchor (1.0.0.25)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=kli_GameNightAdmin,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="kli_GameNightAdmin" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+    </MissingDependencies>
   </SolutionManifest>
 </ImportExportXml>
