@@ -1,0 +1,139 @@
+{
+  "capturedAt": "2026-10-11T15:46:07.662Z",
+  "envId": "0f940836-d097-e42c-8597-62d9d7f17f1d",
+  "flowId": "2142bc9f-85c5-f111-aaaf-70a8a59aa8aa",
+  "operation": "update_flow",
+  "flow": {
+    "name": "2142bc9f-85c5-f111-aaaf-70a8a59aa8aa",
+    "id": "/providers/Microsoft.Flow/environments/0f940836-d097-e42c-8597-62d9d7f17f1d/flows/2142bc9f-85c5-f111-aaaf-70a8a59aa8aa",
+    "type": "Microsoft.Flow/environments/flows",
+    "properties": {
+      "apiId": "/providers/Microsoft.PowerApps/apis/shared_logicflows",
+      "displayName": "New Player Welcome",
+      "userType": "Owner",
+      "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+          "$connections": {
+            "defaultValue": {},
+            "type": "Object"
+          },
+          "$authentication": {
+            "defaultValue": {},
+            "type": "SecureObject"
+          }
+        },
+        "triggers": {
+          "When_a_player_is_added": {
+            "metadata": {
+              "operationMetadataId": "b5b74c2f-07c5-4ea8-99b4-279d5978b529"
+            },
+            "type": "OpenApiConnectionWebhook",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                "connectionName": "shared_commondataserviceforapps",
+                "operationId": "SubscribeWebhookTrigger"
+              },
+              "parameters": {
+                "subscriptionRequest/message": 1,
+                "subscriptionRequest/entityname": "kli_player",
+                "subscriptionRequest/scope": 4,
+                "subscriptionRequest/name": "2142bc9f-85c5-f111-aaaf-70a8a59aa8aa"
+              },
+              "authentication": "@parameters('$authentication')"
+            }
+          }
+        },
+        "actions": {
+          "Show_new_player_name": {
+            "runAfter": {},
+            "metadata": {
+              "operationMetadataId": "6176ffb2-5500-4687-8b90-a45e49b9f543"
+            },
+            "type": "Compose",
+            "inputs": "@triggerOutputs()?['body/kli_name']"
+          }
+        }
+      },
+      "state": "Started",
+      "sharingType": "CommonDataService",
+      "connectionReferences": {
+        "shared_commondataserviceforapps": {
+          "connectionName": "shared-commondataser-d62032c5",
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_94377",
+          "source": "Embedded",
+          "impersonation": {},
+          "id": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+          "displayName": "Microsoft Dataverse",
+          "iconUri": "https://static.powerapps.com/resource/ppcr/releases/v1.0.1831/1.0.1831.5064/commondataserviceforapps/icon.png",
+          "brandColor": "",
+          "tier": "Premium",
+          "apiName": "commondataserviceforapps",
+          "isProcessSimpleApiReferenceConversionAlreadyDone": false
+        }
+      },
+      "createdTime": "2026-10-11T15:30:14.5586239Z",
+      "lastModifiedTime": "2026-10-11T15:31:38Z",
+      "flowSuspensionReason": "None",
+      "environment": {
+        "name": "0f940836-d097-e42c-8597-62d9d7f17f1d",
+        "type": "Microsoft.Flow/environments",
+        "id": "/providers/Microsoft.Flow/environments/0f940836-d097-e42c-8597-62d9d7f17f1d"
+      },
+      "definitionSummary": {
+        "triggers": [
+          {
+            "type": "OpenApiConnectionWebhook",
+            "swaggerOperationId": "SubscribeWebhookTrigger",
+            "metadata": {
+              "operationMetadataId": "b5b74c2f-07c5-4ea8-99b4-279d5978b529"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "type": "Compose",
+            "metadata": {
+              "operationMetadataId": "6176ffb2-5500-4687-8b90-a45e49b9f543"
+            }
+          }
+        ]
+      },
+      "creator": {
+        "tenantId": "497d6241-391a-4277-91ac-bdd2a99f7054",
+        "objectId": "1c1f4c2f-4cb8-478b-962e-fd96cb7a4a93",
+        "userId": "1c1f4c2f-4cb8-478b-962e-fd96cb7a4a93",
+        "userType": "ActiveDirectory"
+      },
+      "installationStatus": "NotApplicable",
+      "provisioningMethod": "FromDefinition",
+      "flowFailureAlertSubscribed": true,
+      "workflowEntityId": "2142bc9f-85c5-f111-aaaf-70a8a59aa8aa",
+      "referencedResources": [],
+      "isManaged": false,
+      "machineDescriptionData": {}
+    }
+  },
+  "context": {
+    "flowId": "2142bc9f-85c5-f111-aaaf-70a8a59aa8aa",
+    "displayName": "New Player Welcome",
+    "workflowId": null,
+    "workflowIdUnique": null,
+    "inSolution": false,
+    "solutionId": null,
+    "solutionUniqueName": null,
+    "solutionFriendlyName": null,
+    "isManaged": false,
+    "workflowIsManaged": false,
+    "isCustomizable": true,
+    "category": null,
+    "ownerId": null,
+    "connectionReferenceLogicalNames": [
+      "new_sharedcommondataserviceforapps_94377"
+    ],
+    "warning": "dataverse-error"
+  },
+  "backupVersion": 1
+}
