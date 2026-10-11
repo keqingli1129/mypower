@@ -9,9 +9,8 @@ is covered in [docs/code-app-setup-guide.md](docs/code-app-setup-guide.md).
 | Folder / file | What it is | Source of truth |
 |---|---|---|
 | `game-night-app/` | **Code app** (React + TypeScript). The only copy of its source code. | **This folder** |
-| `solution/BoardGameManagement/` | Clone of the **whole solution** from Dataverse (table, flow, canvas app, built code app). Refreshed by `sync-solution.sh`. | The cloud (this is a copy) |
-| `sync-solution.sh` | One command: deploy the code app, pull the solution, extract canvas YAML. | — |
-| `game-night-canvas/` | Working folder Claude uses to build canvas screens by co-authoring (`.pa.yaml` + plugin planning notes). | The cloud (copy) |
+| `solution/BoardGameManagement/` | Clone of the **whole solution** from Dataverse (table, flow, apps, security role, built code app). Refreshed by `sync-solution.sh`. The canvas app's readable source is `src/CanvasApps/kli_gamenightplayers_eada4_src/*.pa.yaml`. | The cloud (this is a copy) |
+| `sync-solution.sh` | One command: deploy the code app, pull the solution, extract canvas YAML, print what changed. | — |
 | `game-night-app/dataverse/*.json` | Records of the API requests that created the Player table, Email column and sample players. Notes only. | — |
 | `flows/` | Hand-kept copy of the flow definition. Notes only (the real one is in `solution/…/Workflows/`). | — |
 | `docs/` | Tutorial transcript + code app setup guide. | — |
@@ -33,9 +32,11 @@ What's in the solution:
 | Component | Type | How you change it | How it goes live |
 |---|---|---|---|
 | **Game Night** (`f5916d4e-…`) | Code app | Edit `game-night-app/src/` in VS Code | `npm run deploy` (or `./sync-solution.sh`) |
-| **Game Night Players** (`00cd1a37-…`) | Canvas app | Power Apps Studio (or Claude via co-authoring) | **Save + Publish in Studio** |
-| **New Player Welcome** (`2142bc9f-…`) | Cloud flow | make.powerautomate.com flow designer | Saved = live (flow must be **On**) |
-| **Player** (`kli_player`) | Dataverse table | Maker portal → Tables, or the Web API | Live as soon as saved |
+| **Game Night Players** (`00cd1a37-…`) | Canvas app — **for players**: Register me (`User()`), list, ✎ own row only; no Add/Delete | Power Apps Studio (or Claude via co-authoring; Studio must be open on the app) | **Save + Publish in Studio** — unsaved co-authoring edits are lost |
+| **Game Night Admin** (`kli_GameNightAdmin`) | Model-driven app — **for organizers**: full add/edit/delete | App designer (Navigation/Pages); views & forms in the table designer or via the Web API | **Save + Publish** in the designer (or `PublishXml`) |
+| **New Player Welcome** (`2142bc9f-…`) | Cloud flow — welcome email when a new player has an Email | make.powerautomate.com flow designer | Saved = live (flow must be **On**) |
+| **Player** (`kli_player`) | Dataverse table (Name, Email) | Maker portal → Tables, or the Web API | Live as soon as saved |
+| **Game Night Player** | Security role — Player: Create/Write own, Read/AppendTo all, no Delete | Maker portal → solution → Security role | Saved = live; assign to users/teams per environment |
 | 2 connection references | Dataverse + Outlook | Added automatically with the flow | — |
 
 Rows of data (the players themselves) are **not** part of the solution and are not in Git.
