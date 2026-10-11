@@ -38,22 +38,41 @@
       }
     },
     "actions": {
-      "Send_an_email_(V2)": {
+      "Has_email": {
+        "type": "If",
         "runAfter": {},
-        "type": "OpenApiConnection",
-        "inputs": {
-          "host": {
-            "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
-            "connectionName": "shared_office365",
-            "operationId": "SendEmailV2"
-          },
-          "parameters": {
-            "emailMessage/To": "@triggerOutputs()?['body/kli_email']",
-            "emailMessage/Subject": "Welcome to Game Night, @{triggerOutputs()?['body/kli_name']}!",
-            "emailMessage/Body": "<p>Hi @{triggerOutputs()?['body/kli_name']}, you've been added to Game Night. See you at the next game night!</p>",
-            "emailMessage/Importance": "Normal"
-          },
-          "authentication": "@parameters('$authentication')"
+        "expression": {
+          "and": [
+            {
+              "equals": [
+                "@empty(triggerOutputs()?['body/kli_email'])",
+                false
+              ]
+            }
+          ]
+        },
+        "actions": {
+          "Send_an_email_(V2)": {
+            "runAfter": {},
+            "type": "OpenApiConnection",
+            "inputs": {
+              "host": {
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+                "connectionName": "shared_office365",
+                "operationId": "SendEmailV2"
+              },
+              "parameters": {
+                "emailMessage/To": "@triggerOutputs()?['body/kli_email']",
+                "emailMessage/Subject": "Welcome to Game Night, @{triggerOutputs()?['body/kli_name']}!",
+                "emailMessage/Body": "<p>Hi @{triggerOutputs()?['body/kli_name']}, you've been added to Game Night. See you at the next game night!</p>",
+                "emailMessage/Importance": "Normal"
+              },
+              "authentication": "@parameters('$authentication')"
+            }
+          }
+        },
+        "else": {
+          "actions": {}
         }
       }
     }
@@ -61,11 +80,13 @@
   "connectionReferences": {
     "shared_commondataserviceforapps": {
       "connectionName": "shared-commondataser-d62032c5",
+      "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_94377",
       "source": "Embedded",
       "id": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
     },
     "shared_office365": {
-      "connectionName": "shared-office365-80d9588a",
+      "connectionName": "shared-office365-b40acd92-8357-4523-b95a-957da680c346",
+      "connectionReferenceLogicalName": "new_sharedoffice365_059c3",
       "source": "Embedded",
       "id": "/providers/Microsoft.PowerApps/apis/shared_office365"
     }
