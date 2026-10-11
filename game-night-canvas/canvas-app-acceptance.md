@@ -30,6 +30,7 @@ all PASS statically.
 Single AutoLayout root (`conPlayersRoot`, Width/Height = Parent) as the screen's only child; vertical scroll.
 Row budgets fit at 640 and 320 logical width (largest: edit row 264 ≤ 280). Gallery TemplateSize 65 = 10 + 44 + 10 + 1.
 
-## Not yet proven
-Runtime execution in Studio/player (tap-through of add, rename, delete) has not been run; it needs the user's browser.
-Watch: `Reset(txtPlayersRenameInput)` from a button in the same gallery row (planner-flagged runtime risk).
+## Runtime evidence
+2026-10-11: first session's edits were lost (never saved); screen re-pushed from this folder, user saved and
+published in Studio (lastpublishtime 2026-10-11T14:09:10Z), then play-tested count, list, add, rename (incl. cancel)
+and delete — user reported all good.

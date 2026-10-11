@@ -32,7 +32,13 @@
 - [x] 14c `async`/`await` `Kli_playersService.create({ kli_name, statecode: 0 })` — TS error taught that `statecode` is required by the generated Base type
 - [x] 14d `if (newPlayer)` narrowing, `setPlayers((current) => [...(current ?? []), newPlayer])`, clear input
 - [x] 15 `disabled={newName.trim() === ''}` on the Add button
+- [x] 16a ✕ button per row, `onClick={() => handleDelete(player.kli_playerid)}`, `id: string` parameter type
+- [x] 16b `await Kli_playersService.delete(id)` + `.filter(p => p.kli_playerid !== id)`
+- [x] 16c `if (!window.confirm(...)) return` (early return)
+- [x] 17a ✎ button, `handleRename(player: Kli_players)`, `window.prompt` returns `string | null`
+- [x] 17b guard null/blank, `update(id, { kli_name })` (Partial), `.map(p => p.id === id ? { ...p, kli_name } : p)`
+- [x] Deployed with `npm run deploy` (full CRUD live)
 
 ## Next
-- Step 16: delete a player — ✕ button per row, `Kli_playersService.delete(id)`, `setPlayers(current => current.filter(...))`. Then: edit a name (update), then the second table (Board Game).
+- Options: split App.tsx into components (props), add styling, or the second table (Board Game). Canvas sibling app: ../game-night-canvas (Game Night Players).
 - Later: Board Game, Game Night, RSVP, Game Result tables, one at a time.
