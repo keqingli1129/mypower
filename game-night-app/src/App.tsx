@@ -23,6 +23,11 @@ function App() {
     }
   }
 
+  function handleRename(player: Kli_players) {
+    const name = window.prompt('New name:', player.kli_name)
+    console.log('Rename', player.kli_playerid, 'to', name)
+  }
+
   async function handleDelete(id: string) {
     if (!window.confirm('Delete this player?')) return
     await Kli_playersService.delete(id)
@@ -38,6 +43,7 @@ function App() {
         {players?.map((player) => (
           <li key={player.kli_playerid}>
             {player.kli_name}{' '}
+            <button onClick={() => handleRename(player)}>✎</button>
             <button onClick={() => handleDelete(player.kli_playerid)}>✕</button>
           </li>
         ))}
