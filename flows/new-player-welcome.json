@@ -1,0 +1,44 @@
+{
+  "displayName": "New Player Welcome",
+  "flowId": "2142bc9f-85c5-f111-aaaf-70a8a59aa8aa",
+  "environment": "Keqing Li Dev (0f940836-d097-e42c-8597-62d9d7f17f1d)",
+  "definition": {
+    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "$authentication": { "defaultValue": {}, "type": "SecureObject" },
+      "$connections": { "defaultValue": {}, "type": "Object" }
+    },
+    "triggers": {
+      "When_a_player_is_added": {
+        "type": "OpenApiConnectionWebhook",
+        "inputs": {
+          "host": {
+            "connectionName": "shared_commondataserviceforapps",
+            "operationId": "SubscribeWebhookTrigger",
+            "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+          },
+          "parameters": {
+            "subscriptionRequest/message": 1,
+            "subscriptionRequest/entityname": "kli_player",
+            "subscriptionRequest/scope": 4
+          }
+        }
+      }
+    },
+    "actions": {
+      "Show_new_player_name": {
+        "type": "Compose",
+        "runAfter": {},
+        "inputs": "@triggerOutputs()?['body/kli_name']"
+      }
+    }
+  },
+  "connectionReferences": {
+    "shared_commondataserviceforapps": {
+      "connectionName": "shared-commondataser-d62032c5",
+      "source": "Embedded",
+      "id": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+    }
+  }
+}
