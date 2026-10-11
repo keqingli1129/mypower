@@ -28,6 +28,14 @@
                       </cell>
                     </row>
                     <row>
+                      <cell id="{624f01c6-0eaa-4e89-a5ff-4d3f65ed1f2d}">
+                        <labels>
+                          <label description="Email" languagecode="1033" />
+                        </labels>
+                        <control id="kli_email" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="kli_email" />
+                      </cell>
+                    </row>
+                    <row>
                       <cell id="{9556cc35-bebe-458d-819b-46c5facafefa}">
                         <labels>
                           <label description="Owner" languagecode="1033" />
