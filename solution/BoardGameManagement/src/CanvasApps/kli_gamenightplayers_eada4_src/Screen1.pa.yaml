@@ -76,7 +76,7 @@ Screens:
                   DropShadow: =DropShadow.None
                   Fill: =RGBA(255, 255, 255, 1)
                   FillPortions: =0
-                  Height: =16 + 32 + 12 + 70 + 12 + If(varReceiptVisible, 118 + 12, 0) + 600 + 16
+                  Height: =16 + 32 + 12 + 44 + 12 + If(varReceiptVisible, 118 + 12, 0) + 600 + 16
                   LayoutAlignItems: =LayoutAlignItems.Stretch
                   LayoutDirection: =LayoutDirection.Vertical
                   LayoutGap: =12
@@ -106,6 +106,31 @@ Screens:
                         VerticalAlign: =VerticalAlign.Middle
                         Weight: ='TextCanvas.Weight'.Semibold
                         Wrap: =false
+                  - btnPlayersRegisterMe:
+                      Control: Button@0.0.45
+                      Properties:
+                        AccessibleLabel: ="Register me as a player"
+                        AlignInContainer: =AlignInContainer.Stretch
+                        Appearance: ='ButtonCanvas.Appearance'.Primary
+                        BasePaletteColor: =RGBA(107, 63, 160, 1)
+                        BorderRadius: =6
+                        DisplayMode: =If(IsBlank(User().Email) || !IsBlank(LookUp(Players, Email = User().Email)), DisplayMode.Disabled, DisplayMode.Edit)
+                        FontColor: =RGBA(255, 255, 255, 1)
+                        FontSize: =14
+                        Height: =44
+                        LayoutMinWidth: =0
+                        OnSelect: |-
+                          =With(
+                            {created: Patch(Players, Defaults(Players), {Name: User().FullName, Email: User().Email})},
+                            If(
+                              IsBlank(created),
+                              Notify("Could not register you.", NotificationType.Error),
+                              Set(varLastPlayer, created);
+                              Set(varLastAction, "Registered");
+                              Set(varReceiptVisible, true)
+                            )
+                          )
+                        Text: =If(IsBlank(LookUp(Players, Email = User().Email)), "Register me", "You're registered")
                   - conPlayersAddRow:
                       Control: GroupContainer@1.5.0
                       Variant: AutoLayout
@@ -122,6 +147,7 @@ Screens:
                         RadiusBottomRight: =0
                         RadiusTopLeft: =0
                         RadiusTopRight: =0
+                        Visible: =false
                       Children:
                         - conPlayersAddField:
                             Control: GroupContainer@1.5.0
@@ -423,6 +449,7 @@ Screens:
                                             Set(varRenameId, ThisItem.Player);
                                             Reset(txtPlayersRenameInput)
                                           Text: ="✎"
+                                          Visible: =ThisItem.Email = User().Email
                                           Width: =44
                                     - btnPlayersDelete:
                                         Control: Button@0.0.45
@@ -439,6 +466,7 @@ Screens:
                                             =Set(varRenameId, Blank());
                                             Set(varDeleteId, ThisItem.Player)
                                           Text: ="✕"
+                                          Visible: =false
                                           Width: =44
                               - conPlayersEditRow:
                                   Control: GroupContainer@1.5.0
