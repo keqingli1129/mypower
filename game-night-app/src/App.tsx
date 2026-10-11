@@ -23,8 +23,9 @@ function App() {
     }
   }
 
-  function handleDelete(id: string) {
-    console.log('Delete clicked, id =', id)
+  async function handleDelete(id: string) {
+    await Kli_playersService.delete(id)
+    setPlayers((current) => (current ?? []).filter((player) => player.kli_playerid !== id))
   }
 
   return (
