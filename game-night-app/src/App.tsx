@@ -23,9 +23,13 @@ function App() {
     }
   }
 
-  function handleRename(player: Kli_players) {
+  async function handleRename(player: Kli_players) {
     const name = window.prompt('New name:', player.kli_name)
-    console.log('Rename', player.kli_playerid, 'to', name)
+    if (name === null || name.trim() === '') return
+    await Kli_playersService.update(player.kli_playerid, { kli_name: name })
+    setPlayers((current) =>
+      (current ?? []).map((p) => (p.kli_playerid === player.kli_playerid ? { ...p, kli_name: name } : p))
+    )
   }
 
   async function handleDelete(id: string) {
