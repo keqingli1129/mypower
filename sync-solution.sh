@@ -3,8 +3,9 @@
 #   1. build + deploy the code app from game-night-app/ (so the solution holds your newest TypeScript)
 #   2. pull the Board Game Management solution from Keqing Li Dev into solution/
 #   3. extract each canvas app's readable .pa.yaml source next to its .msapp package
+#   4. print a short summary of what changed in solution/ (git status + line counts)
 # Skip step 1 with:  ./sync-solution.sh --no-deploy
-# Afterwards review with: git status / git diff
+# Full details afterwards: git diff -- solution
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 
@@ -37,4 +38,12 @@ with zipfile.ZipFile(msapp) as z:
             print('  extracted', target)
 PY
 done
-echo "Done. Review with: git status && git diff"
+echo "== Changes in solution/ since your last commit"
+cd "$ROOT"
+if [[ -z "$(git status --porcelain -- solution)" ]]; then
+  echo "  No changes - solution/ already matches the cloud."
+else
+  git status --short -- solution | sed 's/^/  /'
+  git diff --stat -- solution | tail -1 | sed 's/^/  /'
+  echo "  See details with: git diff -- solution   (new ?? files: open them in VS Code)"
+fi
