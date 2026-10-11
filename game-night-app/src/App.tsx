@@ -24,6 +24,7 @@ function App() {
   }
 
   async function handleDelete(id: string) {
+    if (!window.confirm('Delete this player?')) return
     await Kli_playersService.delete(id)
     setPlayers((current) => (current ?? []).filter((player) => player.kli_playerid !== id))
   }
