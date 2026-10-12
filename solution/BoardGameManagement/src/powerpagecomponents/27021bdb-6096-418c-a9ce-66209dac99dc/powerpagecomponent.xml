@@ -1,0 +1,11 @@
+<powerpagecomponent powerpagecomponentid="27021bdb-6096-418c-a9ce-66209dac99dc">
+  <content>{"description":"Specifies the default value for the SameSite attribute on HTTP cookies set by the portal.","value":"Lax"}</content>
+  <iscustomizable>1</iscustomizable>
+  <name>HTTP/SameSite/Default</name>
+  <powerpagecomponenttype>9</powerpagecomponenttype>
+  <powerpagesiteid>
+    <powerpagesiteid>247453bb-9317-4cfb-ace2-30cdbda2cbea</powerpagesiteid>
+  </powerpagesiteid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</powerpagecomponent>
