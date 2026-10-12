@@ -1,0 +1,10 @@
+<dvtablesearchentity dvtablesearchentityid="8651e24e-87c5-460e-850d-acdf91fa85d1">
+  <dvtablesearch>
+    <dvtablesearchid>d8e4341c-e5c9-455b-91f3-6cfcfbcf40ac</dvtablesearchid>
+  </dvtablesearch>
+  <entitylogicalname>kli_player</entitylogicalname>
+  <iscustomizable>0</iscustomizable>
+  <name>kli_Player</name>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearchentity>
