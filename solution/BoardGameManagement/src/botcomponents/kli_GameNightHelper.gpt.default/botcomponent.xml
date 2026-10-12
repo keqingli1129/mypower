@@ -1,0 +1,10 @@
+<botcomponent schemaname="kli_GameNightHelper.gpt.default">
+  <componenttype>15</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>Game Night Helper</name>
+  <parentbotid>
+    <schemaname>kli_GameNightHelper</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>
