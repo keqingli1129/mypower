@@ -1,0 +1,10 @@
+mcs.metadata:
+  componentName: Game Night Helper
+kind: GptComponentMetadata
+instructions: You are a friendly helper for our board game night. Keep answers short.
+gptCapabilities:
+  webBrowsing: true
+
+aISettings:
+  model:
+    modelNameHint: GPT5Chat
