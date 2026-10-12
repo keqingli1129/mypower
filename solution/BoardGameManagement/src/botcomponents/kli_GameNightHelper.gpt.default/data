@@ -1,7 +1,7 @@
 kind: GptComponentMetadata
 instructions: You are a friendly helper for our board game night. Keep answers short.
 gptCapabilities:
-  webBrowsing: true
+  webBrowsing: false
 
 aISettings:
   model:
