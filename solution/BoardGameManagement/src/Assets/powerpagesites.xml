@@ -1,6 +1,6 @@
 <powerpagesites>
   <powerpagesite powerpagesiteid="247453bb-9317-4cfb-ace2-30cdbda2cbea">
-    <content>{"defaultlanguage":"36e12834-c807-47d2-b375-1e0629ab0056","footerwebtemplateid":"1c1b192b-f799-4b0e-8814-ae232d742383","headerwebtemplateid":"eb40846e-67fd-439e-afc7-65e3e05024f2","website_language":1033}</content>
+    <content>{"defaultlanguage":"36e12834-c807-47d2-b375-1e0629ab0056","footerwebtemplateid":"1c1b192b-f799-4b0e-8814-ae232d742383","headerwebtemplateid":"eb40846e-67fd-439e-afc7-65e3e05024f2","website_language":1033,"defaultbotconsumerid":"14309592-dcc5-f111-aaaf-70a8a59aa8aa"}</content>
     <datamodelversion>2.0</datamodelversion>
     <enhancedauthorization>0</enhancedauthorization>
     <iscustomizable>1</iscustomizable>
