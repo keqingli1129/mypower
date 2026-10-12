@@ -1,6 +1,6 @@
 # Game Night — Power Platform learning project
 
-A small "Game Night" project built three ways on one Dataverse table, kept in Git.
+A small "Game Night" project built three ways on one Dataverse table, plus a Power Pages website, kept in Git.
 This file is the how-to for maintaining the folder. Setting up a new code app from scratch
 is covered in [docs/code-app-setup-guide.md](docs/code-app-setup-guide.md).
 
@@ -9,7 +9,7 @@ is covered in [docs/code-app-setup-guide.md](docs/code-app-setup-guide.md).
 | Folder / file | What it is | Source of truth |
 |---|---|---|
 | `game-night-app/` | **Code app** (React + TypeScript). The only copy of its source code. | **This folder** |
-| `solution/BoardGameManagement/` | Clone of the **whole solution** from Dataverse (table, flow, apps, security role, built code app). Refreshed by `sync-solution.sh`. The canvas app's readable source is `src/CanvasApps/kli_gamenightplayers_eada4_src/*.pa.yaml`. | The cloud (this is a copy) |
+| `solution/BoardGameManagement/` | Clone of the **whole solution** from Dataverse (table, flow, apps, security role, built code app, Power Pages site). Refreshed by `sync-solution.sh`. The canvas app's readable source is `src/CanvasApps/kli_gamenightplayers_eada4_src/*.pa.yaml`; the site is `src/powerpagecomponents/` (one folder per page/template/setting) + `src/Assets/powerpagesites.xml`. | The cloud (this is a copy) |
 | `sync-solution.sh` | One command: deploy the code app, pull the solution, extract canvas YAML, print what changed. | — |
 | `game-night-app/dataverse/*.json` | Records of the API requests that created the Player table, Email column and sample players. Notes only. | — |
 | `flows/` | Hand-kept copy of the flow definition. Notes only (the real one is in `solution/…/Workflows/`). | — |
@@ -37,6 +37,9 @@ What's in the solution:
 | **New Player Welcome** (`2142bc9f-…`) | Cloud flow — welcome email when a new player has an Email | make.powerautomate.com flow designer | Saved = live (flow must be **On**) |
 | **Player** (`kli_player`) | Dataverse table (Name, Email) | Maker portal → Tables, or the Web API | Live as soon as saved |
 | **Game Night Player** | Security role — Player: Create/Write own, Read/AppendTo all, no Delete | Maker portal → solution → Security role | Saved = live; assign to users/teams per environment |
+| **Game Night** site (`kli-gamenight.powerappsportals.com`, website ID `247453bb-…`) | Power Pages site (enhanced data model) — Home: welcome text + **Public Players** list (names only). **Private** (see below) | Design studio at make.powerpages.microsoft.com, or `pac pages download/upload --modelVersion 2` | Live on save/upload. New pieces made in the studio are **not** added to the solution automatically — solution → Add existing → Site → Include all objects, then sync |
+| **Public Players** view | Player view with Name only — the site's list uses it. **Never add Email** | Table designer → Views | Save + Publish |
+| **Public Players Read** | Site table permission — Anonymous Users may **read** Player rows (nothing else) | Design studio → Security → Table permissions | Live on save |
 | 2 connection references | Dataverse + Outlook | Added automatically with the flow | — |
 
 Rows of data (the players themselves) are **not** part of the solution and are not in Git.
@@ -59,6 +62,7 @@ git status                        # anything changed? commit it first as "Sync: 
 | Code app (ready to go live) | `./sync-solution.sh` (builds, deploys, then pulls) |
 | Canvas app | Edit in Studio → **Save** → **Publish** → `./sync-solution.sh --no-deploy` |
 | Flow or table | Edit in the browser → save → `./sync-solution.sh --no-deploy` |
+| Power Pages site | Edit in the design studio → add any new pieces to the solution (Add existing → Site) → `./sync-solution.sh --no-deploy` |
 
 **End of a session**
 ```bash
@@ -98,6 +102,13 @@ An expired sign-in shows `AADSTS70043` / "sign-in frequency", or the script stop
 Never `npm run deploy` straight into a production environment, and never edit things there — change them in
 Keqing Li Dev and ship a new package.
 
+## Power Pages site: current limits (2026-10-11)
+
+- **Nobody can view it yet.** A private site signs people in through an Entra app (**Portals-Game Night**), and FBISD requires IT to approve it. The request was sent; until then, opening the site shows "Request sent".
+- **It can't be public here.** Microsoft doesn't allow public sites in **Developer** environments. Going public (for external users) needs a Sandbox/Production environment from FBISD IT, where the admin setting "Set site visibility to public access for non-production sites" allows it. Then import the solution there and switch **Security → Site visibility → Public**.
+- The studio auto-created a Copilot **Bot Consumer** (Default `crf6e_` prefix). It's **not** in the solution, but `src/Assets/powerpagesites.xml` refers to it (`defaultbotconsumerid`) — sort that out before importing elsewhere.
+- Create new sites in the **design studio**, not via the admin API: the API made an old-style (Standard data model) site that can't go into a solution.
+
 ## Troubleshooting (things that actually happened)
 
 | Symptom | Fix |
@@ -114,6 +125,7 @@ Keqing Li Dev and ship a new package.
 ## Where to look in the cloud
 
 - Apps, tables, solution: **make.powerapps.com** → environment **Keqing Li Dev** → Solutions → Board Game Management → **Objects**
+- Power Pages site: **make.powerpages.microsoft.com** → Keqing Li Dev → Game Night → **Edit**
 - Flow + run history: **make.powerautomate.com** → Keqing Li Dev → My flows → New Player Welcome
 - Connections: either portal → **Connections**
 - Environment settings (e.g. code apps on/off): **admin.powerplatform.microsoft.com** → Environments → Keqing Li Dev → Settings
