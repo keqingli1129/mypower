@@ -1,0 +1,22 @@
+mcs.metadata:
+  componentName: Greeting
+  description: This topic is triggered when the user greets the agent.
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Greeting
+    triggerQueries:
+      - Hello
+      - Hi
+      - Hey
+      - Good morning
+      - Good afternoon
+
+  actions:
+    - kind: SendActivity
+      id: sendMessage_greet1
+      activity:
+        text:
+          - Welcome to Game Night! 🎲 Ask me anything about board games.
