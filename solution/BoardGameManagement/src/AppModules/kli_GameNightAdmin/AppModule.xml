@@ -10,7 +10,9 @@
   <ClientType>4</ClientType>
   <NavigationType>0</NavigationType>
   <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="kli_gamenight" />
     <AppModuleComponent type="1" schemaName="kli_player" />
+    <AppModuleComponent type="1" schemaName="kli_rsvp" />
     <AppModuleComponent type="62" schemaName="kli_GameNightAdmin" />
   </AppModuleComponents>
   <AppModuleRoleMaps>
