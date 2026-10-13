@@ -87,6 +87,7 @@
       <RootComponent type="29" id="{2142bc9f-85c5-f111-aaaf-70a8a59aa8aa}" behavior="0" />
       <RootComponent type="29" id="{e553db11-3ac7-f111-aaaf-70a8a59aa8aa}" behavior="0" />
       <RootComponent type="300" schemaName="crf6e_gamenight_1ace2" behavior="0" />
+      <RootComponent type="300" schemaName="kli_gamelibrary_05297" behavior="0" />
       <RootComponent type="300" schemaName="kli_gamenightplayers_eada4" behavior="0" />
       <RootComponent type="62" schemaName="kli_GameNightAdmin" behavior="0" />
       <RootComponent type="70" id="{f5f082f2-43c7-f111-aaaf-70a8a59aa8aa}" behavior="0" />
