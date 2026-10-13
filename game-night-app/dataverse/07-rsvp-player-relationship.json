@@ -1,0 +1,21 @@
+{
+  "@odata.type": "Microsoft.Dynamics.CRM.OneToManyRelationshipMetadata",
+  "SchemaName": "kli_Player_kli_Rsvp",
+  "ReferencedEntity": "kli_player",
+  "ReferencingEntity": "kli_rsvp",
+  "CascadeConfiguration": {
+    "Assign": "NoCascade",
+    "Delete": "Cascade",
+    "Merge": "NoCascade",
+    "Reparent": "NoCascade",
+    "Share": "NoCascade",
+    "Unshare": "NoCascade"
+  },
+  "Lookup": {
+    "@odata.type": "Microsoft.Dynamics.CRM.LookupAttributeMetadata",
+    "SchemaName": "kli_PlayerId",
+    "DisplayName": { "LocalizedLabels": [ { "Label": "Player", "LanguageCode": 1033 } ] },
+    "Description": { "LocalizedLabels": [ { "Label": "The player who is answering.", "LanguageCode": 1033 } ] },
+    "RequiredLevel": { "Value": "ApplicationRequired" }
+  }
+}

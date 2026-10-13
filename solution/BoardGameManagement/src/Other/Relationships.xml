@@ -3,6 +3,7 @@
   <EntityRelationship Name="business_unit_kli_gamenight" />
   <EntityRelationship Name="business_unit_kli_player" />
   <EntityRelationship Name="business_unit_kli_rsvp" />
+  <EntityRelationship Name="kli_Player_kli_Rsvp" />
   <EntityRelationship Name="lk_kli_gamenight_createdby" />
   <EntityRelationship Name="lk_kli_gamenight_modifiedby" />
   <EntityRelationship Name="lk_kli_player_createdby" />
