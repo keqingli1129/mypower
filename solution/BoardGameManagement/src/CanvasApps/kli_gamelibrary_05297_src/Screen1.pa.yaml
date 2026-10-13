@@ -49,3 +49,11 @@ Screens:
                   Width: =Parent.TemplateWidth - 248
                   X: =16
                   Y: =44
+      - btnAddGame:
+          Control: Button@0.0.45
+          Properties:
+            OnSelect: =Navigate(scrAddGame, ScreenTransition.Cover)
+            Text: ="+ Add game"
+            Width: =160
+            X: =680
+            Y: =40
