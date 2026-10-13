@@ -1,0 +1,5 @@
+<Field Type="User" Name="GameOwner" StaticName="GameOwner" DisplayName="Owner"
+       Description="Who owns the game and brings it to game night."
+       List="UserInfo" ShowField="ImnName"
+       UserSelectionMode="PeopleOnly" UserSelectionScope="0" Mult="FALSE"
+       Required="FALSE" />
