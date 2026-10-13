@@ -1,0 +1,6 @@
+{
+  "Title": "GameLibrary",
+  "Description": "Board games we own and can bring to game night.",
+  "BaseTemplate": 100,
+  "AllowContentTypes": false
+}
