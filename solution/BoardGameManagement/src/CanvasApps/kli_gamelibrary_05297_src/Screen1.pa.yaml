@@ -10,3 +10,23 @@ Screens:
   Screen1:
     Properties:
       LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    Children:
+      - galGames:
+          Control: Gallery@2.15.0
+          Variant: Vertical
+          Properties:
+            Height: =Parent.Height - 80
+            Items: ='Game Library'
+            TemplateSize: =60
+            Width: =600
+            X: =40
+            Y: =40
+          Children:
+            - lblTitle:
+                Control: Label@2.5.1
+                Properties:
+                  Size: =18
+                  Text: =ThisItem.Title
+                  Width: =Parent.TemplateWidth - 32
+                  X: =16
+                  Y: =10
