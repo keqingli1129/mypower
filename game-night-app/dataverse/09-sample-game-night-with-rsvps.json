@@ -1,0 +1,9 @@
+{
+  "kli_name": "October Game Night",
+  "kli_eventdate": "2026-10-25T00:00:00Z",
+  "kli_GameNight_kli_Rsvp": [
+    { "kli_name": "Keqing - October", "kli_PlayerId@odata.bind": "/kli_players(d778e600-a9c5-f111-aaaf-70a8a59aa8aa)" },
+    { "kli_name": "Elena - October",  "kli_PlayerId@odata.bind": "/kli_players(99ac15f8-55c4-f111-aaaf-70a8a59aa8aa)" },
+    { "kli_name": "Marcus - October", "kli_PlayerId@odata.bind": "/kli_players(c75efb49-24c4-f111-aaaf-70a8a59aa8aa)" }
+  ]
+}
