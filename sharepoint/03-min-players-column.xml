@@ -1,0 +1,3 @@
+<Field Type="Number" Name="MinPlayers" StaticName="MinPlayers" DisplayName="Min players"
+       Description="Fewest players the game supports."
+       Required="TRUE" Min="1" Max="20" Decimals="0" />

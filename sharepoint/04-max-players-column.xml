@@ -1,0 +1,3 @@
+<Field Type="Number" Name="MaxPlayers" StaticName="MaxPlayers" DisplayName="Max players"
+       Description="Most players the game supports."
+       Required="TRUE" Min="1" Max="20" Decimals="0" />
