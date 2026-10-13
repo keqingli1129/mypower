@@ -1,0 +1,18 @@
+{
+  "@odata.type": "Microsoft.Dynamics.CRM.PicklistAttributeMetadata",
+  "SchemaName": "kli_Status",
+  "DisplayName": { "LocalizedLabels": [ { "Label": "Status", "LanguageCode": 1033 } ] },
+  "Description": { "LocalizedLabels": [ { "Label": "Is the player coming?", "LanguageCode": 1033 } ] },
+  "RequiredLevel": { "Value": "ApplicationRequired" },
+  "DefaultFormValue": 318470000,
+  "OptionSet": {
+    "@odata.type": "Microsoft.Dynamics.CRM.OptionSetMetadata",
+    "IsGlobal": false,
+    "OptionSetType": "Picklist",
+    "Options": [
+      { "Value": 318470000, "Label": { "LocalizedLabels": [ { "Label": "Going",     "LanguageCode": 1033 } ] } },
+      { "Value": 318470001, "Label": { "LocalizedLabels": [ { "Label": "Maybe",     "LanguageCode": 1033 } ] } },
+      { "Value": 318470002, "Label": { "LocalizedLabels": [ { "Label": "Not going", "LanguageCode": 1033 } ] } }
+    ]
+  }
+}
