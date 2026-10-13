@@ -27,6 +27,14 @@ Screens:
                 Properties:
                   Size: =18
                   Text: =ThisItem.Title
-                  Width: =Parent.TemplateWidth - 32
+                  Width: =Parent.TemplateWidth - 248
                   X: =16
+                  Y: =10
+            - lblPlayers:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Right
+                  Text: =ThisItem.'Min players' & "–" & ThisItem.'Max players' & " players"
+                  Width: =200
+                  X: =Parent.TemplateWidth - 216
                   Y: =10
