@@ -381,7 +381,7 @@
             </options>
           </optionset>
           <displaynames>
-            <displayname description="Status" languagecode="1033" />
+            <displayname description="Response" languagecode="1033" />
           </displaynames>
           <Descriptions>
             <Description description="Is the player coming?" languagecode="1033" />
