@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FieldSecurityProfiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FieldSecurityProfile name="Game Night Players" description="Players may set their own Email when registering, but may not read or change anyone's Email." fieldsecurityprofileid="{f5f082f2-43c7-f111-aaaf-70a8a59aa8aa}">
+    <FieldPermissions>
+      <FieldPermission>
+        <EntityName>kli_player</EntityName>
+        <AttributeName>kli_email</AttributeName>
+        <CanRead>0</CanRead>
+        <CanUpdate>0</CanUpdate>
+        <CanCreate>4</CanCreate>
+        <CanReadUnmasked>0</CanReadUnmasked>
+      </FieldPermission>
+    </FieldPermissions>
+  </FieldSecurityProfile>
+</FieldSecurityProfiles>

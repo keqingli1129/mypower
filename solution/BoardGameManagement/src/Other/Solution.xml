@@ -89,6 +89,7 @@
       <RootComponent type="300" schemaName="crf6e_gamenight_1ace2" behavior="0" />
       <RootComponent type="300" schemaName="kli_gamenightplayers_eada4" behavior="0" />
       <RootComponent type="62" schemaName="kli_GameNightAdmin" behavior="0" />
+      <RootComponent type="70" id="{f5f082f2-43c7-f111-aaaf-70a8a59aa8aa}" behavior="0" />
       <RootComponent type="80" schemaName="kli_GameNightAdmin" behavior="0" />
     </RootComponents>
     <MissingDependencies>

@@ -1,0 +1,13 @@
+{
+  "name": "Game Night Players",
+  "description": "Players may set their own Email when registering, but may not read or change anyone's Email.",
+  "lk_fieldpermission_fieldsecurityprofileid": [
+    {
+      "entityname": "kli_player",
+      "attributelogicalname": "kli_email",
+      "cancreate": 4,
+      "canread": 0,
+      "canupdate": 0
+    }
+  ]
+}
