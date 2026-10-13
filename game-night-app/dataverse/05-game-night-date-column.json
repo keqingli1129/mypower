@@ -1,0 +1,9 @@
+{
+  "@odata.type": "Microsoft.Dynamics.CRM.DateTimeAttributeMetadata",
+  "SchemaName": "kli_EventDate",
+  "DisplayName": { "LocalizedLabels": [ { "Label": "Event Date", "LanguageCode": 1033 } ] },
+  "Description": { "LocalizedLabels": [ { "Label": "When the game night starts.", "LanguageCode": 1033 } ] },
+  "Format": "DateAndTime",
+  "DateTimeBehavior": { "Value": "UserLocal" },
+  "RequiredLevel": { "Value": "ApplicationRequired" }
+}
