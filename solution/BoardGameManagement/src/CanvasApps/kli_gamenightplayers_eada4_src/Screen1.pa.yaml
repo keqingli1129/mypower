@@ -114,7 +114,7 @@ Screens:
                         Appearance: ='ButtonCanvas.Appearance'.Primary
                         BasePaletteColor: =RGBA(107, 63, 160, 1)
                         BorderRadius: =6
-                        DisplayMode: =If(IsBlank(User().Email) || !IsBlank(LookUp(Players, Email = User().Email)), DisplayMode.Disabled, DisplayMode.Edit)
+                        DisplayMode: =If(IsBlank(User().Email) || !IsBlank(LookUp(Players, 'Created By'.'Primary Email' = User().Email)), DisplayMode.Disabled, DisplayMode.Edit)
                         FontColor: =RGBA(255, 255, 255, 1)
                         FontSize: =14
                         Height: =44
@@ -130,7 +130,7 @@ Screens:
                               Set(varReceiptVisible, true)
                             )
                           )
-                        Text: =If(IsBlank(LookUp(Players, Email = User().Email)), "Register me", "You're registered")
+                        Text: =If(IsBlank(LookUp(Players, 'Created By'.'Primary Email' = User().Email)), "Register me", "You're registered")
                   - conPlayersAddRow:
                       Control: GroupContainer@1.5.0
                       Variant: AutoLayout
@@ -449,7 +449,7 @@ Screens:
                                             Set(varRenameId, ThisItem.Player);
                                             Reset(txtPlayersRenameInput)
                                           Text: ="✎"
-                                          Visible: =ThisItem.Email = User().Email
+                                          Visible: =ThisItem.'Created By'.'Primary Email' = User().Email
                                           Width: =44
                                     - btnPlayersDelete:
                                         Control: Button@0.0.45
