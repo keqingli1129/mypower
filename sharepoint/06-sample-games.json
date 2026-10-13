@@ -1,0 +1,5 @@
+[
+  { "Title": "Catan",         "MinPlayers": 3, "MaxPlayers": 4, "GameOwnerId": 3 },
+  { "Title": "Codenames",     "MinPlayers": 2, "MaxPlayers": 8, "GameOwnerId": 3 },
+  { "Title": "Ticket to Ride", "MinPlayers": 2, "MaxPlayers": 5 }
+]
