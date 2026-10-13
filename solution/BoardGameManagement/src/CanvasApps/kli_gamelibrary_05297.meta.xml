@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>kli_gamelibrary_05297</Name>
-  <AppVersion>2026-10-13T21:53:31Z</AppVersion>
+  <AppVersion>2026-10-13T21:57:09Z</AppVersion>
   <Status>Ready</Status>
   <CreatedByClientVersion>3.26094.9.0</CreatedByClientVersion>
   <MinClientVersion>3.26094.9.0</MinClientVersion>
-  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","showStatusBar":"false","publisherVersion":"3.26094.9","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","m365CopilotSettingValue":"0","sienaVersion":"20261013T211444Z-3.26094.9.0","coauthoringEnabled":"true","multipleWritersEnabled":"true"}</Tags>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","showStatusBar":"false","publisherVersion":"3.26094.9","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","m365CopilotSettingValue":"0","sienaVersion":"20261013T211444Z-3.26094.9.0","coauthoringEnabled":"true","multipleWritersEnabled":"true","acceptedCoauthoringTerms":"true"}</Tags>
   <IsCdsUpgraded>0</IsCdsUpgraded>
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>

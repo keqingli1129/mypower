@@ -17,7 +17,7 @@ Screens:
           Properties:
             Height: =Parent.Height - 80
             Items: ='Game Library'
-            TemplateSize: =60
+            TemplateSize: =80
             Width: =600
             X: =40
             Y: =40
@@ -38,3 +38,14 @@ Screens:
                   Width: =200
                   X: =Parent.TemplateWidth - 216
                   Y: =10
+            - lblOwner:
+                Control: Label@2.5.1
+                Properties:
+                  Color: =RGBA(96, 96, 96, 1)
+                  Height: =28
+                  Size: =12
+                  Text: |-
+                    ="Owner: " & Coalesce(ThisItem.Owner.DisplayName, "nobody yet")
+                  Width: =Parent.TemplateWidth - 248
+                  X: =16
+                  Y: =44
