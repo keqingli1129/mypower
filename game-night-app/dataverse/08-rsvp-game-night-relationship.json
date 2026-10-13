@@ -1,0 +1,21 @@
+{
+  "@odata.type": "Microsoft.Dynamics.CRM.OneToManyRelationshipMetadata",
+  "SchemaName": "kli_GameNight_kli_Rsvp",
+  "ReferencedEntity": "kli_gamenight",
+  "ReferencingEntity": "kli_rsvp",
+  "CascadeConfiguration": {
+    "Assign": "NoCascade",
+    "Delete": "Restrict",
+    "Merge": "NoCascade",
+    "Reparent": "NoCascade",
+    "Share": "NoCascade",
+    "Unshare": "NoCascade"
+  },
+  "Lookup": {
+    "@odata.type": "Microsoft.Dynamics.CRM.LookupAttributeMetadata",
+    "SchemaName": "kli_GameNightId",
+    "DisplayName": { "LocalizedLabels": [ { "Label": "Game Night", "LanguageCode": 1033 } ] },
+    "Description": { "LocalizedLabels": [ { "Label": "The game night this answer is for.", "LanguageCode": 1033 } ] },
+    "RequiredLevel": { "Value": "ApplicationRequired" }
+  }
+}
