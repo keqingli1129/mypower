@@ -10,7 +10,9 @@
     <layoutxml>
       <grid name="resultset" jump="kli_name" select="1" icon="1" preview="1">
         <row name="result" id="kli_gamenightid">
-          <cell name="kli_name" width="300" />
+          <cell name="kli_name" width="200" />
+          <cell name="kli_eventdate" width="150" />
+          <cell name="kli_goingcount" width="100" />
           <cell name="createdon" width="125" />
         </row>
       </grid>
@@ -21,8 +23,10 @@
         <entity name="kli_gamenight">
           <attribute name="kli_gamenightid" />
           <attribute name="kli_name" />
+          <attribute name="kli_eventdate" />
+          <attribute name="kli_goingcount" />
           <attribute name="createdon" />
-          <order attribute="kli_name" descending="false" />
+          <order attribute="kli_eventdate" descending="false" />
           <filter type="and">
             <condition attribute="statecode" operator="eq" value="0" />
           </filter>

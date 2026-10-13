@@ -28,6 +28,22 @@
                       </cell>
                     </row>
                     <row>
+                      <cell id="{a1f0c002-0000-4000-8000-000000000001}">
+                        <labels>
+                          <label description="Event Date" languagecode="1033" />
+                        </labels>
+                        <control id="kli_eventdate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="kli_eventdate" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a1f0c002-0000-4000-8000-000000000002}">
+                        <labels>
+                          <label description="Going Count" languagecode="1033" />
+                        </labels>
+                        <control id="kli_goingcount" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="kli_goingcount" />
+                      </cell>
+                    </row>
+                    <row>
                       <cell id="{aef74922-d688-421c-81b2-fddb1e489470}">
                         <labels>
                           <label description="Owner" languagecode="1033" />
