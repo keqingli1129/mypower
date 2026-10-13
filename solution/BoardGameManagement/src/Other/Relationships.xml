@@ -1,9 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_kli_gamenight" />
   <EntityRelationship Name="business_unit_kli_player" />
+  <EntityRelationship Name="lk_kli_gamenight_createdby" />
+  <EntityRelationship Name="lk_kli_gamenight_modifiedby" />
   <EntityRelationship Name="lk_kli_player_createdby" />
   <EntityRelationship Name="lk_kli_player_modifiedby" />
+  <EntityRelationship Name="owner_kli_gamenight" />
   <EntityRelationship Name="owner_kli_player" />
+  <EntityRelationship Name="team_kli_gamenight" />
   <EntityRelationship Name="team_kli_player" />
+  <EntityRelationship Name="user_kli_gamenight" />
   <EntityRelationship Name="user_kli_player" />
 </EntityRelationships>
