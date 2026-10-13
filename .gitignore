@@ -1,2 +1,3 @@
 .maker-workspace/
 node_modules/
+.playwright-mcp/
