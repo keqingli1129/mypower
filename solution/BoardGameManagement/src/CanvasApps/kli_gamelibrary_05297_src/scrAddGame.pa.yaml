@@ -227,3 +227,11 @@ Screens:
             Text: ="Save"
             X: =150
             Y: =110
+      - btnDelete:
+          Control: Button@0.0.45
+          Properties:
+            OnSelect: =Remove('Game Library', galGames.Selected); Back()
+            Text: ="Delete"
+            Visible: =frmGame.Mode = FormMode.Edit
+            X: =260
+            Y: =110
