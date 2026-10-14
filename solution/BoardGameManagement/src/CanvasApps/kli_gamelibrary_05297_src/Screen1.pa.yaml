@@ -17,6 +17,7 @@ Screens:
           Properties:
             Height: =Parent.Height - 80
             Items: ='Game Library'
+            OnSelect: =EditForm(frmGame); Navigate(scrAddGame, ScreenTransition.Cover)
             TemplateSize: =80
             Width: =600
             X: =40
@@ -52,7 +53,7 @@ Screens:
       - btnAddGame:
           Control: Button@0.0.45
           Properties:
-            OnSelect: =Navigate(scrAddGame, ScreenTransition.Cover)
+            OnSelect: =NewForm(frmGame); Navigate(scrAddGame, ScreenTransition.Cover)
             Text: ="+ Add game"
             Width: =160
             X: =680

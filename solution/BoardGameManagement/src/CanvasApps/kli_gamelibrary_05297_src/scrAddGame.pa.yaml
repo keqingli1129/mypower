@@ -14,7 +14,7 @@ Screens:
           Properties:
             Height: =48
             Size: =24
-            Text: ="Add a game"
+            Text: =If(frmGame.Mode = FormMode.New, "Add a game", "Edit game")
             Width: =400
             X: =40
             Y: =40
@@ -33,6 +33,7 @@ Screens:
             DataSource: ='Game Library'
             DefaultMode: =FormMode.New
             Height: =Parent.Height - Self.Y - 20
+            Item: =galGames.Selected
             NumberOfColumns: =1
             OnSuccess: =ResetForm(Self); Back()
             Width: =500
@@ -159,7 +160,7 @@ Screens:
                   Update: |-
                     =If(
                         IsBlank(cmbOwner.Selected),
-                        Blank(),
+                        ThisItem.Owner,
                         {
                             '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
                             Claims: "i:0#.f|membership|" & Lower(cmbOwner.Selected.Mail),
@@ -216,6 +217,12 @@ Screens:
       - btnSave:
           Control: Button@0.0.45
           Properties:
+            DisplayMode: |-
+              =If(
+                  Value(txtMaxPlayers.Text) >= Value(txtMinPlayers.Text),
+                  DisplayMode.Edit,
+                  DisplayMode.Disabled
+              )
             OnSelect: =SubmitForm(frmGame)
             Text: ="Save"
             X: =150
