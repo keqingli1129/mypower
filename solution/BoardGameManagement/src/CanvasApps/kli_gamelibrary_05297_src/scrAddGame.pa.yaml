@@ -26,3 +26,131 @@ Screens:
             Text: ="Back"
             X: =40
             Y: =110
+      - frmGame:
+          Control: Form@2.4.4
+          Layout: Vertical
+          Properties:
+            DataSource: ='Game Library'
+            DefaultMode: =FormMode.New
+            Height: =340
+            NumberOfColumns: =1
+            OnSuccess: =ResetForm(Self); Back()
+            Width: =500
+            X: =40
+            Y: =170
+          Children:
+            - crdTitle:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicTextualEdit
+                Properties:
+                  DataField: ="Title"
+                  Default: =ThisItem.Title
+                  DisplayName: ="Title"
+                  Height: =100
+                  MaxLength: =DataSourceInfo([@'Game Library'], DataSourceInfo.MaxLength, 'Title')
+                  Required: =true
+                  Update: =txtTitle.Text
+                  Width: =500
+                  X: =0
+                  Y: =0
+                Children:
+                  - txtTitleCaption:
+                      Control: Label@2.5.1
+                      Properties:
+                        Height: =30
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width
+                  - txtTitle:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        Default: =Parent.Default
+                        Width: =Parent.Width
+                        Y: =30
+                  - txtTitleError:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =Color.Red
+                        Height: =24
+                        Size: =11
+                        Text: =Parent.Error
+                        Width: =Parent.Width
+                        Y: =72
+            - crdMinPlayers:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicNumberEdit
+                Properties:
+                  DataField: ="MinPlayers"
+                  Default: =ThisItem.'Min players'
+                  DisplayName: ="Min players"
+                  Height: =100
+                  Required: =true
+                  Update: =Value(txtMinPlayers.Text)
+                  Width: =500
+                  X: =0
+                  Y: =1
+                Children:
+                  - txtMinPlayersCaption:
+                      Control: Label@2.5.1
+                      Properties:
+                        Height: =30
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width
+                  - txtMinPlayers:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        Default: =Parent.Default
+                        Format: =TextFormat.Number
+                        Width: =Parent.Width
+                        Y: =30
+                  - txtMinPlayersError:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =Color.Red
+                        Height: =24
+                        Size: =11
+                        Text: =Parent.Error
+                        Width: =Parent.Width
+                        Y: =72
+            - crdMaxPlayers:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicNumberEdit
+                Properties:
+                  DataField: ="MaxPlayers"
+                  Default: =ThisItem.'Max players'
+                  DisplayName: ="Max players"
+                  Height: =100
+                  Required: =true
+                  Update: =Value(txtMaxPlayers.Text)
+                  Width: =500
+                  X: =0
+                  Y: =2
+                Children:
+                  - txtMaxPlayersCaption:
+                      Control: Label@2.5.1
+                      Properties:
+                        Height: =30
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width
+                  - txtMaxPlayers:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        Default: =Parent.Default
+                        Format: =TextFormat.Number
+                        Width: =Parent.Width
+                        Y: =30
+                  - txtMaxPlayersError:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =Color.Red
+                        Height: =24
+                        Size: =11
+                        Text: =Parent.Error
+                        Width: =Parent.Width
+                        Y: =72
+      - btnSave:
+          Control: Button@0.0.45
+          Properties:
+            OnSelect: =SubmitForm(frmGame)
+            Text: ="Save"
+            X: =150
+            Y: =110
