@@ -1,0 +1,9 @@
+[
+  { "Title": "Pandemic",    "MinPlayers": 2, "MaxPlayers": 4,  "GameOwnerId": 3 },
+  { "Title": "Azul",        "MinPlayers": 2, "MaxPlayers": 4 },
+  { "Title": "Patchwork",   "MinPlayers": 2, "MaxPlayers": 2,  "GameOwnerId": 3 },
+  { "Title": "Dixit",       "MinPlayers": 3, "MaxPlayers": 8 },
+  { "Title": "Splendor",    "MinPlayers": 2, "MaxPlayers": 4,  "GameOwnerId": 3 },
+  { "Title": "Just One",    "MinPlayers": 3, "MaxPlayers": 7 },
+  { "Title": "Wingspan",    "MinPlayers": 1, "MaxPlayers": 5,  "GameOwnerId": 3 }
+]
