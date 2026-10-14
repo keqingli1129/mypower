@@ -154,7 +154,7 @@ Screens:
                   DataField: ="GameOwner"
                   Default: =ThisItem.Owner
                   DisplayName: ="Owner"
-                  Height: =100
+                  Height: =150
                   Required: =false
                   Update: |-
                     =If(
@@ -181,16 +181,21 @@ Screens:
                         Text: =Parent.DisplayName
                         Width: =Parent.Width
                   - cmbOwner:
-                      Control: Classic/ComboBox@2.4.0
+                      Control: ComboBox@0.0.51
                       Properties:
-                        DisplayFields: =["DisplayName"]
-                        InputTextPlaceholder: ="Search for a person"
+                        Height: =40
+                        InputTextPlaceholder: ="Then pick the person here"
+                        IsSearchable: =false
                         Items: |-
-                          =Office365Users.SearchUserV2({searchTerm: Self.SearchText, top: 15}).value
-                        SearchFields: =["DisplayName"]
-                        SelectMultiple: =false
+                          =ShowColumns(
+                              AddColumns(
+                                  Office365Users.SearchUserV2({searchTerm: txtOwnerSearch.Text, top: 15}).value,
+                                  Value, DisplayName
+                              ),
+                              Value, DisplayName, Mail
+                          )
                         Width: =Parent.Width
-                        Y: =30
+                        Y: =76
                   - cmbOwnerError:
                       Control: Label@2.5.1
                       Properties:
@@ -199,7 +204,15 @@ Screens:
                         Size: =11
                         Text: =Parent.Error
                         Width: =Parent.Width
-                        Y: =72
+                        Y: =120
+                  - txtOwnerSearch:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        Default: =""
+                        DelayOutput: =true
+                        HintText: ="Type part of a name, e.g. Keqing"
+                        Width: =Parent.Width
+                        Y: =30
       - btnSave:
           Control: Button@0.0.45
           Properties:
