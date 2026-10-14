@@ -32,7 +32,7 @@ Screens:
           Properties:
             DataSource: ='Game Library'
             DefaultMode: =FormMode.New
-            Height: =340
+            Height: =Parent.Height - Self.Y - 20
             NumberOfColumns: =1
             OnSuccess: =ResetForm(Self); Back()
             Width: =500
@@ -139,6 +139,59 @@ Screens:
                         Width: =Parent.Width
                         Y: =30
                   - txtMaxPlayersError:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =Color.Red
+                        Height: =24
+                        Size: =11
+                        Text: =Parent.Error
+                        Width: =Parent.Width
+                        Y: =72
+            - crdOwner:
+                Control: TypedDataCard@1.0.7
+                Variant: ClassicComboBoxEdit
+                Properties:
+                  DataField: ="GameOwner"
+                  Default: =ThisItem.Owner
+                  DisplayName: ="Owner"
+                  Height: =100
+                  Required: =false
+                  Update: |-
+                    =If(
+                        IsBlank(cmbOwner.Selected),
+                        Blank(),
+                        {
+                            '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                            Claims: "i:0#.f|membership|" & Lower(cmbOwner.Selected.Mail),
+                            DisplayName: cmbOwner.Selected.DisplayName,
+                            Email: cmbOwner.Selected.Mail,
+                            Department: "",
+                            JobTitle: "",
+                            Picture: ""
+                        }
+                    )
+                  Width: =500
+                  X: =0
+                  Y: =3
+                Children:
+                  - cmbOwnerCaption:
+                      Control: Label@2.5.1
+                      Properties:
+                        Height: =30
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width
+                  - cmbOwner:
+                      Control: Classic/ComboBox@2.4.0
+                      Properties:
+                        DisplayFields: =["DisplayName"]
+                        InputTextPlaceholder: ="Search for a person"
+                        Items: |-
+                          =Office365Users.SearchUserV2({searchTerm: Self.SearchText, top: 15}).value
+                        SearchFields: =["DisplayName"]
+                        SelectMultiple: =false
+                        Width: =Parent.Width
+                        Y: =30
+                  - cmbOwnerError:
                       Control: Label@2.5.1
                       Properties:
                         Color: =Color.Red
