@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.26091.167" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26091.167" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26091.00167">
+<ImportExportXml version="9.2.26091.167" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26091.167" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26092.00158">
   <SolutionManifest>
     <UniqueName>BoardGameManagement</UniqueName>
     <LocalizedNames>
@@ -88,6 +88,7 @@
       <RootComponent type="29" id="{e553db11-3ac7-f111-aaaf-70a8a59aa8aa}" behavior="0" />
       <RootComponent type="300" schemaName="crf6e_gamenight_1ace2" behavior="0" />
       <RootComponent type="300" schemaName="kli_gamelibrary_05297" behavior="0" />
+      <RootComponent type="300" schemaName="kli_gamelibrarypractice_ff753" behavior="0" />
       <RootComponent type="300" schemaName="kli_gamenightplayers_eada4" behavior="0" />
       <RootComponent type="62" schemaName="kli_GameNightAdmin" behavior="0" />
       <RootComponent type="70" id="{f5f082f2-43c7-f111-aaaf-70a8a59aa8aa}" behavior="0" />

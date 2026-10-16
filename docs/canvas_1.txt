@@ -1,0 +1,289 @@
+Introduction
+Hello and welcome to my YouTube channel.
+Today I'll be showing you how to create
+canvas app with Power Apps. To get
+started, navigate to make.powerapps.com.
+This will take you to the Power Apps
+homepage. The Power Apps homepage is
+various options for creating your own
+apps, opening apps that you or others
+have created, and performing related
+tasks. Here we see the left navigation
+Power Apps Homepage Walkthrough
+pane. This is the main control center,
+which gives you access to everything you
+need. Here's what each option does. Home
+takes you to the Power Apps homepage.
+Create. Create apps such as canvas apps,
+model driven apps, chat bots, and a
+models. Learn. The learn hub lets you
+explore documents, training material.
+Get help from Power Apps community and
+other resources that help you to create
+and build Power Apps. Plan. View and
+edit your plans. Apps. If you created an
+app or someone else created one and
+shared it with you, you can play or edit
+it. You can also filter the list of apps
+based on the criteria such as whether
+you opened it recently.
+AIHub. Create and use AI models to
+optimize your business processes.
+Next, your mostused pages. The top three
+pages that you use most are pinned to
+the left navigation pane. More pin your
+mostused items to the left navigation,
+such as tables, flows, and more. Power
+Platform. Explore other Power Platform
+products or services. In the left
+navigation pane, select create. Start
+Creating a Blank Canvas App
+with a blank canvas and then choose an
+app size. Once the app is created, you
+are taken to the Power App Studio where
+you can start building and customizing
+your app. However, before you do this,
+here is a quick overview of the Power
+App Studio. Power App Studio modern
+command bar. This is a dynamic command
+bar that shows a different set of
+commands based on the control selected.
+App actions options to view properties,
+add comments, run the app, checker,
+share, preview, save, or publish the
+app. Properties list. This is a list of
+properties for the selected object such
+as fill or height. Formula bar. Compose
+or edit a formula for the selected
+property with one or more functions.
+App authoring menu selection pane to
+switch between data sources and allows
+you to insert options.
+App authoring options. This pane reveals
+the corresponding authoring feature when
+a feature is selected from the app
+authoring menu. Canvas/c screen. Primary
+canvas for composing the app structure.
+Properties pane. Properties list for the
+selected object in tree view. Settings.
+Configure your app in settings.
+Screen selector. Switch between
+different screens in your app. Tree view
+selections display here. Change canvas
+screen size. Change the display size of
+the canvas apps you offer the app. Now
+in Power Apps, add a data connection to
+your existing canvas app that you're
+building from scratch. Your app can
+connect to SharePoint, Microsoft Data
+versse, Salesforce, One Drive, or many
+other data sources. From the app
+Connecting to SharePoint
+authoring menu in Power App Studio,
+select data, add data. Expand connectors
+and if the list of connections includes
+the one that you want, select it to add
+it to the app. Otherwise, skip to the
+next step. To connect to a table in
+Microsoft data versse, instead choose a
+table from the list of tables. To create
+a new connection, search for or select a
+connector such as SharePoint. Select add
+a connection to both create the
+connection and add it to your app.
+Some connectors such as Office 365
+Outlook require no additional steps, and
+you can show data from them immediately.
+Other connectors prompt you to provide
+credentials, specify a particular set of
+data, or perform other steps. For
+example, SharePoint and SQL Server
+require additional information before
+you can use them. With data versse, you
+can change the environment before you
+select a table.
+Next, we'll add a gallery control. A
+Adding a Gallery Control
+gallery control can show multiple
+records from a data source, and each
+record contain multiple types of data.
+For example, you can use gallery control
+to show multiple contacts with each item
+showing contact information that
+includes a name, an address, and a phone
+number for each contact. Each data field
+appears in a separate control within the
+gallery control. And you can configure
+those controls in its template. The
+template appears as the first item
+inside the gallery. Any changes that you
+make in the template are reflected
+throughout the gallery control.
+When creating a blank canvas app, some
+controls are already added by power-ups.
+Open the insert menu on the main
+container one control. Select vertical
+gallery. Select the data source. I'll
+use the one I added previously.
+Information from the data source you
+previously added is now displayed in the
+gallery control. You can change which
+fields are displayed in the gallery by
+selecting the template of the gallery
+control and selecting the fields in the
+properties pane. You can also change the
+type of layout by selecting one of the
+different options in the layout
+property.
+You can change the width of the gallery
+by editing the width property of the
+control in the properties pane. It is
+also a good idea to turn on flexible
+height property.
+Another important control is a text
+label control. This control can be used
+as a label for fields. Use this vers
+text control to display text messages
+and information on the app. The key
+properties for this control are text
+size and font color. These properties
+are for the following. Text to display
+on canvas. Size, the font size of the
+text that appears on a control. Font,
+the name of the family of fonts in which
+text appears. You can add a text label
+control to the app by opening the insert
+menu on the header container one control
+and select text label. I'll change a few
+properties as shown in the properties
+pane.
+If you would like to edit the records
+displayed in the gallery, you'll need to
+add a form control. For the purpose of
+this tutorial, I'll add a new screen by
+selecting new screen and the blank
+template.
+Adding an Edit Form
+Now you can add a form control to update
+the data displayed in the gallery.
+Select the insert button from the header
+menu. Find and select edit form. The
+control form one appears on your screen.
+Notice that the new form prompts you to
+connect to data. With the form control
+selected, look at the properties panel
+on the right side of the screen.
+Directly under properties, you see data
+source and a dropown saying none. Select
+the dropown and select the data source
+added previously. Your form now shows
+input fields arrayed in a free column
+format. All the fields should be blank.
+Some of these fields are not needed.
+Let's remove them from the form. In the
+properties panel, select the link to
+edit fields. It's just below the data
+source drop down. Remove the unwanted
+fields or add more if necessary.
+Next, you can designate which item of
+our data to display in the form. Go back
+to screen one which contains the gallery
+control. Select the next arrow icon
+control which is in the gallery
+template.
+In the properties list, select the on
+select formula and add navigate to
+screen two. The navigate formula changes
+which screen is displayed.
+Adding Navigation and Save Button
+Go to screen two. Select the form
+control. In the item field in the
+formula bar, enter gallery 1 dot
+selected. You should immediately see
+data populating the fields of your form.
+Next, you'll add a button control to
+save any changes you make to the data.
+First, select screen two from the tree
+view pane. Select the insert button from
+the command bar and find and select
+button. Adjust the size and location of
+the button in the form so that the
+button is immediately below the form.
+Change the buttons text from button to
+save changes. In the properties panel on
+the right, the first item is the text
+property. Replace button with save
+changes and enter it. With your button
+control selected, go up to the formula
+bar. Change the onslate property from
+false to read submit form form one. If
+your form isn't named form one, use the
+actual name of your form. Select screen
+two from the tree preview. Select insert
+and locate the icons group. Add the back
+arrow. Resize the back arrow so that is
+on top left of the screen. Make sure the
+back arrow is selected and in the
+properties list, find unselect.
+In the formula bar, change the property
+from false to back. The back formula
+changes which screen is displayed. You
+now have the functionality to navigate
+to and from the gallery and form. Go
+back to screen one. Select the insert
+option on the photo container one
+control. Add a text label.
+Change the text to open this list in
+SharePoint by clicking here. I've also
+changed the color and a few other
+properties as shown in the properties
+pane.
+Select the text label and in the
+properties list find on select. Add the
+launch formula and a link to the
+SharePoint list. The launch formula
+launches a web page or a canvas app and
+provides access to launch parameters.
+Testing and Publishing
+Play the app in preview by selecting the
+play button in app actions. You now have
+a fully working Canvas app. Test the app
+by selecting the icon besides a record
+in the gallery. Edit a field in the
+form. Select the save changes button and
+navigate back by selecting the back
+arrow. You will then see the edited
+record in the gallery. You can double
+check that the record was edited by then
+selecting the link and taking a look in
+the SharePoint at the record which was
+edited.
+Don't forget to exit preview by
+selecting the X button and then publish.
+Before creating a canvas app is
+important to consider if a model driven
+app is better suited. Here are some
+factors to consider. Customization
+versus standardization. If you need a
+highly customized user interface, canvas
+apps are the way to go. For standardized
+datadriven applications, model driven
+apps are better suited. Complexity of
+business processes. Model driven apps
+excel in handling complex business
+processes and workflows. While canvas
+apps offer more flexibility for simple
+usercentric applications.
+In conclusion, the battle of canvas apps
+versus model driven apps. There is no
+oneizefits-all answer. Each approach has
+its own strengths and is better suited
+for different scenarios.
+By understanding your business needs and
+the capabilities of each app type, you
+can make an informed decision that
+maximizes the potential of Microsoft
+Power Platform. If a model driven app is
+better suited, check out the other
+tutorial videos on my channel for
+another in-depth explanation
